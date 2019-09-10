@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../../css/mui.min.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <style>
+        .mineTitle {
+            padding-top: 70px;
+            background: #9999FF;
+            height: 4rem;
+            position: relative;
+
+        }
+
+        .nowAddress {
+            position: absolute;
+            top: 1.8rem;
+            color: white;
+            left: 0.625rem;
+            /* font-size: 1rem; */
+        }
+
+        .div-bor {
+            position: absolute;
+            top: 1.8rem;
+            right: 2rem;
+            /* position: relative; */
+            width: 200px;
+        }
+
+        .icon-user {
+            position: absolute;
+            left: 10px;
+            top: 2px;
+            z-index: 5;
+            background-image: url(user.png); /*引入图片图片*/
+            background-repeat: no-repeat; /*设置图片不重复*/
+            background-position: 0px 0px; /*图片显示的位置*/
+            width: 15px; /*设置图片显示的宽*/
+            height: 0.5rem; /*图片显示的高*/
+        }
+
+        input[type=text] {
+            border-radius: 100px;
+            height: 1.8rem;
+            text-indent: 1.5rem;
+        }
+
+        .cardInfo {
+            width: 100%;
+        }
+
+        .trapCard {
+            margin: 0.625rem;
+            display: flex;
+            flex-direction: row;
+            background: #FFFFFF;
+            height: 8.0em;
+            border-radius: 0.625rem;
+            box-shadow: 2px 2px 5px #999;
+            overflow: hidden
+        }
+
+        .trapPic {
+            width: 116px;
+            height: 125px;
+            margin: 0.25rem;
+            margin-right: 0.55rem;
+
+        }
+
+        .journey,
+        .peopleNum,
+        .date {
+            width: 100%;
+            padding: 0;
+            margin-top: 0.75rem;
+            font-size: 0.76rem;
+            color: #999999;
+        }
+
+        .peopleNum {
+            margin-top: 0.25rem;
+        }
+
+        .date {
+            width: 5rem;
+            font-size: 0.8rem;
+            /* border: 2px solid #FF0000; */
+        }
+
+        .address {
+            width: 100%;
+            position: relative;
+            height: 1.25rem;
+            margin-top: 0.25rem;
+            font-size: 1rem;
+            /* border: 2px solid  #f00; */
+        }
+
+        .address .departure {
+            display: inline-block;
+            position: absolute;
+            width: 5.8rem;
+            text-align: left;
+            /* border: 2px solid #f00; */
+        }
+
+        .address .iconPosition {
+            position: absolute;
+            left: 45%;
+            display: inline-block;
+        }
+
+        .address .goal {
+            position: absolute;
+            right: 1rem;
+            display: inline-block;
+            width: 5rem;
+            text-align: right;
+        }
+
+        .userInfo {
+            position: absolute;
+            display: flex;
+            overflow: hidden
+            width: 100%;
+            position: relative;
+            top: 0.5rem;
+            font-size: 1.5rem;
+            bottom: 0.25rem;
+        }
+
+        .headInfo {
+            height: 2.5rem;
+            width: 2.5rem;
+            border-radius: 100%;
+        }
+
+        .Nickname,
+        .date {
+            position: absolute;
+            left: 2.9rem;
+        }
+
+        .Nickname {
+            color: #000000;
+        }
+
+        .date {
+            position: absolute;
+            top: 9px;
+        }
+
+        .btn {
+            display: block;
+            position: absolute;
+            right: 0.5rem;
+            top: 0.2rem;
+            border: none;
+            border-radius: 20px;
+            height: 2.25rem;
+            color: #FFFFFF;
+            font-weight: bold;
+            width: 4.8rem;
+        }
+
+        .jionBtn {
+            background: #CC99FF;
+        }
+
+        .jionedBtn {
+            background: #9999FF;
+        }
+
+        .endBtn {
+            background: #C9C9C9;
+        }
+
+        .icon_home:before {
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="mineTitle">
+    <div class="nowAddress"><i class="icon icon_home"></i>成都</div>
+    <div class="div-bor">
+        <i class="icon  icon_message icon-user"></i>
+        <input type="text" class="user" placeholder=" 寻找队伍" disabled="disabled"/>
+    </div>
+</div>
+
+<div class="trapCard">
+    <img class="trapPic" src="../../img/jay.jpg"/>
+    <div class="cardInfo">
+        <div class="address">
+            <span class="departure icon icon_home">成都1515</span>
+            <span class="iconPosition">→</span>
+            <span class="goal icon icon_home">拉萨</span>
+        </div>
+        <div class="journey">行程：<span>2019年9月7日</span>&nbsp;-&nbsp;<span>2019年9月8日</span></div>
+        <div class="peopleNum">出行人数：<span>3</span>/<span>5</span></div>
+        <div class="userInfo">
+            <img class="headInfo" src="../../img/jay.jpg"/>
+            <div>
+                <p class="Nickname">周杰伦</p>
+                <p class="date">2019-07-01</p>
+            </div>
+            <button class="jionBtn btn" style="display: none;">JOIN IN</button>
+            <button class="jionedBtn btn">已加入</button>
+            <button class="endBtn btn" style="display: none;">一结束</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="trapCard">
+    <img class="trapPic" src="../../img/jay.jpg"/>
+    <div class="cardInfo">
+        <div class="address">
+            <span class="departure">成都</span>
+            <span class="iconPosition">→</span>
+            <span class="goal">拉萨</span>
+        </div>
+        <div class="journey">行程：<span>2019年9月7日</span>-<span>2019年9月8日</span></div>
+        <div class="peopleNum">出行人数：<span>3</span>/<span>5</span></div>
+        <div class="userInfo">
+            <img class="headInfo" src="../../img/jay.jpg"/>
+            <div>
+                <p class="Nickname">周杰伦</p>
+                <p class="date">2019-07-01</p>
+            </div>
+            <button class="jionBtn btn" style="display: none;">JOIN IN</button>
+            <button class="jionedBtn btn" style="display: none;">已加入</button>
+            <button class="endBtn btn">已结束</button>
+        </div>
+    </div>
+</div>
+
+<div class="trapCard">
+    <img class="trapPic" src="../../img/jay.jpg"/>
+    <div class="cardInfo">
+        <div class="address">
+            <span class="departure">成都</span>
+            <span class="iconPosition">→</span>
+            <span class="goal">拉萨</span>
+        </div>
+        <div class="journey">行程：<span>2019年9月7日</span>-<span>2019年9月8日</span></div>
+        <div class="peopleNum">出行人数：<span>3</span>/<span>5</span></div>
+        <div class="userInfo">
+            <img class="headInfo" src="../../img/jay.jpg"/>
+            <div>
+                <p class="Nickname">周杰伦</p>
+                <p class="date">2019-07-01</p>
+            </div>
+            <button class="jionBtn btn">JOIN IN</button>
+            <button class="jionedBtn btn" style="display: none;">已加入</button>
+            <button class="endBtn btn" style="display: none;">一结束</button>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../../js/mui.min.js"></script>
+<script src="../../js/jquery-3.2.1.min.js"></script>
+<script>
+    mui.init();
+    $(".div-bor").click(function () {
+        mui.openWindow({
+            url: 'search.html', //String类型,要打开的界面的地址
+            show: {
+                aniShow: 'slide-in-right',
+                duration: 200
+            }
+        })
+    })
+    $(".user").click(function () {
+        console.log(66)
+        mui.openWindow({
+            url: 'sreach.html', //String类型,要打开的界面的地址
+            show: {
+                aniShow: 'slide-in-right',
+                duration: 200
+            }
+        })
+    })
+
+    $(".trapCard").click(function () {
+        console.log(66)
+        mui.openWindow({
+            url: 'detail.html', //String类型,要打开的界面的地址
+            show: {
+                aniShow: 'slide-in-right',
+                duration: 200
+            }
+        })
+    })
+</script>
+</html>

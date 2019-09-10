@@ -1,0 +1,213 @@
+/*
+ *这是单独为hello mui准备的个性化css，可以覆盖标准mui的css定义；
+ * 在实际项目开发时，建议为App单独写一个css文件，从而实现项目的自定义皮肤功能；
+ * 这里应该写app通用的css
+ * */
+
+html {
+    font-size: 12px;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    /* font-size: 17px; 已经做自适应处理*/
+    line-height: 21px;
+    color: #000;
+    width: 100%;
+    margin: 0;
+    background-color: white !important;
+    -webkit-overflow-scrolling: touch
+}
+
+@media (min-width: 320px) {
+    html {
+        font-size: 14.2222px;
+    }
+}
+
+@media (min-width: 360px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 375px) {
+    html {
+        font-size: 16.6667px;
+    }
+}
+
+@media (min-width: 411px) {
+    html {
+        font-size: 18.3111px;
+    }
+}
+
+@media (min-width: 480px) {
+    html {
+        font-size: 21.3333px;
+    }
+}
+
+@media (min-width: 640px) {
+    html {
+        font-size: 28.4444px;
+    }
+}
+
+@media (min-width: 720px) {
+    html {
+        font-size: 32px;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 34.1333px;
+    }
+}
+
+@media (min-width: 960px) {
+    html {
+        font-size: 42.6667px;
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 45.5111px;
+    }
+}
+
+@media (min-width: 1440px) {
+    html {
+        font-size: 64px;
+    }
+}
+
+.app-test {
+    /* border: 1px solid #ce139d; */
+}
+
+/* .icon-mall:before{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	-webkit-animation: 0.2s;
+	content: '\E900';
+} */
+
+.mui-bar-tab .mui-tab-item.mui-active.icon-mall {
+    /* width: 100%;
+    height: 100%; */
+    text-align: center;
+    -webkit-animation: 0.2s;
+    content: '\E900';
+}
+
+.nav-tab-icon {
+    background-image: url(../img/ico/icon_mall.png);
+    background-size: 40px 40px;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+/* .mui-bar-tab .mui-tab-item.mui-active{
+	-webkit-animation: 0.2s;
+	background-size: 30px 30px;
+	background: url(../img/ico/icon_mall_a.png);
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.app-header {
+    /* border: #008000 1px solid; */
+    top: 0;
+    height: 3.6rem !important;
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(24, 128, 111, 1) 0%, rgba(75, 168, 62, 1) 100%);
+}
+
+.app-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: absolute;
+    display: block;
+    width: 94%;
+    bottom: 0.4rem;
+    text-align: center;
+    white-space: nowrap;
+    color: #FFFFFF;
+}
+
+.app-content {
+    position: absolute;
+    width: 100%;
+    top: 4rem;
+    /* 背景色调试   后期改 */
+    background-color: #F6F6F6;
+    -webkit-overflow-scrolling: touch;
+    /* height: 100%; */
+    width: 100%;
+}
+
+.arrow-left {
+    position: absolute !important;
+    padding: 0 !important;
+    /* top: 45%; */
+    bottom: 0.4rem;
+    font-family: Muiicons;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #FFFFFF;
+    /* background:rgba(25,129,110,1); */
+}
+
+.font-size-26 {
+    font-size: 26px;
+}
+
+.font-size-18 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.font-size-14 {
+    margin: 3px 0;
+    font-size: 14px;
+}
+
+.font-size-12 {
+    font-size: 12px;
+    color: #848484;
+}
+
+.font-size-10 {
+    font-size: 10px;
+    font-weight: 500;
+    color: #333
+}
+
+.font-size-8 {
+    font-size: 8px;
+}
+
+
+.mui-bar-tab .mui-tab-item.mui-active .icon-group-buy:before {
+    text-align: center;
+    -webkit-animation: 0.2s;
+    content: '\E908';
+}
+
+/* .mui-active.icon-person{
+	
+} */
+
+div {
+    /* border: 1px solid #10c32f;//test 开发 */
+}

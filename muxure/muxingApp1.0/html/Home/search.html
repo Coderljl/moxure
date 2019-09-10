@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../../css/mui.min.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <style>
+        .mineTitle {
+            display: flex;
+            padding-top: 20px;
+            background: #9999FF;
+            height: 4.5rem;
+            position: relative;
+        }
+
+        .div-bor {
+            margin-left: 10%;
+            top: 0.625rem;
+            position: relative;
+            width: 250px;
+        }
+
+        .icon-user {
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            z-index: 5;
+            background-image: url(user.png); /*引入图片图片*/
+            background-repeat: no-repeat; /*设置图片不重复*/
+            background-position: 0px 0px; /*图片显示的位置*/
+            width: 15px; /*设置图片显示的宽*/
+            height: 0.5rem; /*图片显示的高*/
+        }
+
+        input[type=text] {
+            border-radius: 100px;
+            height: 1.8rem;
+            text-indent: 1.5rem;
+        }
+
+        .mui-icon-arrowleft:before, .search {
+            color: #FFFFFF;
+            top: 0.625rem;
+            position: relative;
+        }
+
+        .search {
+            /* border: 2px solid #f00; */
+            margin-left: 1%;
+            font-size: 1rem;
+            height: 2rem;
+            line-height: 2rem;
+            color: #FFFFFF;
+        }
+
+        .mui-icon-arrowleft:before {
+            font-size: 2rem;
+        }
+
+        .hotSearch {
+            margin: 0.625rem;
+            margin-top: 0.925rem;
+            font-size: 12px;
+        }
+
+        .title {
+            color: #999999;
+        }
+
+        .area {
+            margin-top: 10px;
+        }
+
+        .searchLable {
+            padding: 5px 8px;
+            background: #E4E4E4;
+            border-radius: 0.2rem;
+            font-size: 15px;
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+<div class="mineTitle">
+    <span id="return" class="mui-icon mui-icon mui-icon-arrowleft"></span>
+    <div class="div-bor">
+        <i class="icon  icon_message icon-user"></i>
+        <input type="text" class="user" placeholder=" 寻找队伍"/>
+    </div>
+    <p class="search">搜索</p>
+</div>
+<div class="hotSearch">
+    <span class="title">热门搜索</span><br/>
+    <div class="area">
+        <span class="searchLable">海拉尔</span>
+        <span class="searchLable">成都</span>
+    </div>
+</div>
+
+<div class="hotSearch">
+    <span class="title">历史搜索</span><br/>
+    <div class="area">
+        <span class="searchLable">海拉尔</span>
+        <span class="searchLable">成都</span>
+    </div>
+</div>
+</body>
+<script src="../../js/mui.min.js"></script>
+<script src="../../js/jquery-3.2.1.min.js"></script>
+<script>
+    mui.init({
+        keyEventBind: {
+            backbutton: true,
+            menubutton: false
+        },
+    });
+    mui.plusReady(function () {
+        //显示软键盘
+        void plus.key.showSoftKeybord();
+        var nativeWebview = plus.webview.currentWebview().nativeInstanceObject();
+        if (mui.os.android) {
+            //强制当前webview获得焦点
+            plus.android.importClass(nativeWebview);
+            nativeWebview.requestFocus();
+        }
+        setTimeout(function () {
+            //此处可写具体逻辑设置获取焦点的input
+            $(".user").trigger("click").focus();
+        }, .200);
+    });
+    $(".search").click(function () {
+        console.log(66)
+        mui.openWindow({
+            url: 'sreachResule.html', //String类型,要打开的界面的地址
+            show: {
+                aniShow: 'slide-in-right',
+                duration: 200
+            }
+        })
+    })
+    $("#return").click(function () {
+        mui.back();
+    })
+</script>
+</html>

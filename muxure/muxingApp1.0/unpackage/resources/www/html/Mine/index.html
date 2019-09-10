@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/mui.min.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .mineTitle {
+            padding-top: 70px;
+            background: #9999FF;
+            height: 11rem;
+        }
+
+        .mineTitle p {
+            font-size: 3.5rem;
+            height: 6rem;
+            line-height: 7rem;
+            text-align: center;
+            color: white;
+        }
+
+        .userInfo {
+            display: flex;
+            flex-direction: row;
+            margin-top: 2.25rem;
+            margin-left: 2.05rem;
+            margin-right: 2.05rem;
+            padding-bottom: 2.5125rem;
+            border-bottom: 2px solid #9999FF;
+        }
+
+        .userInfo .headInfo {
+            width: 10.3125rem;
+            height: 10.3125rem;
+            border-radius: 100%;
+        }
+
+        .userInfo .wordsInfo,
+        .userInfo .other {
+            margin-top: 3rem;
+        }
+
+        .userInfo .wordsInfo {
+            margin-left: 1.875rem;
+        }
+
+        .userInfo .wordsInfo .Nickname {
+            height: 4rem;
+            font-size: 4rem;
+            color: #000000;
+        }
+
+        .userInfo .wordsInfo .signature {
+            font-size: 2rem;
+        }
+
+        .userInfo .other {
+            position: absolute;
+            right: 1.875rem;
+            font-size: 2rem;
+            color: #666;
+        }
+
+        .userInfo .other span {
+            color: pink;
+        }
+
+        .userActivity {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .userActivity tr td {
+            width: 33%;
+            text-align: center;
+        }
+
+        .userActivity .status {
+            margin-top: 2.05rem;
+            font-size: 2.5rem;
+        }
+
+        .userActivity .number {
+            margin-top: 1.25rem;
+            color: #000000;
+            font-size: 2rem;
+        }
+
+        .line {
+            margin-top: 40px;
+            border: 10px solid #E4E4E4;
+        }
+
+        .foot_title {
+            position: relative;
+            height: 3rem;
+            width: 100%;
+        }
+
+        .foot_title .foot {
+            padding: 0 2rem;
+            line-height: 3rem;
+            width: 8rem;
+            font-size: 0.96rem;
+            font-family: PingFangSC-Regular;
+            font-weight: bold;
+            color: #333333;
+            /* border-color: #E7E7E7; */
+        }
+
+        .outsideList li,
+        .likeList li,
+        .adviceList li {
+            height: 7rem;
+            font-size: 3rem;
+            line-height: 7rem;
+            border-bottom: 2px solid #D8D8D8;
+            color: #666666;
+            text-indent: 2.125rem;
+        }
+
+        .likeList,
+        .adviceList {
+            margin-top: 1.25rem;
+        }
+
+        .likeList li,
+        .adviceList .advice {
+            border-top: 2px solid #D8D8D8;
+        }
+
+        .mui-icon-forward:before {
+            position: absolute;
+            right: 6.125rem;
+            font-size: 5rem;
+            margin-top: -3.5rem;
+            color: #D1D1FF;
+        }
+    </style>
+</head>
+<body>
+<!-- 导航栏 -->
+<div class="mineTitle">
+    <p>我</p>
+</div>
+<!-- 头部内容信息 -->
+<div class="userInfo">
+    <img class="headInfo" src="../../img/jay.jpg"/>
+    <div class="wordsInfo">
+        <p class="Nickname">
+            周杰伦
+        </p>
+        <p class="signature">
+            窝窝头，1块钱4个。
+        </p>
+    </div>
+    <div class="other">
+        <span>√</span>认证向导
+    </div>
+</div>
+<!-- 关注、粉丝、动态信息 -->
+<table class="userActivity">
+    <tr>
+        <td class="attention">
+            <p class="attentionNumber number">112</p>
+            <p class="status">喜欢</p>
+        </td>
+        <td class="funs">
+            <p class="funsNumber number">112</p>
+            <p class="status">粉丝</p>
+        </td>
+        <td class="activity">
+            <p class="activityNumber number">112</p>
+            <p class="status">动态</p>
+        </td>
+    </tr>
+</table>
+<div class="line"></div>
+<div class="list">
+    <ul class="outsideList">
+        <li><span class="icon icon_travel"></span>我的出行<span class="mui-icon mui-icon-forward"></span></li>
+        <li><span class="icon icon_travel"></span>身份认证<span class="mui-icon mui-icon-forward"> </span></li>
+    </ul>
+
+    <ul class="likeList">
+        <li><span class="icon icon_travel"></span>我的出行<span class="mui-icon mui-icon-forward"> </span></li>
+    </ul>
+
+    <ul class="adviceList">
+        <a href="#">
+            <li class="advice"><span class="icon icon_travel"></span>反馈建议<span
+                    class="mui-icon mui-icon-forward"> </span></li>
+        </a>
+        <a href="setting.html">
+            <li><span class="icon icon_travel"></span>设置<span class="mui-icon mui-icon-forward"></span></li>
+        </a>
+    </ul>
+</div>
+</body>
+<script src="../../js/mui.min.js"></script>
+<script src="../../js/jquery-3.2.1.min.js"></script>
+<script>
+    mui('.list').on('tap', 'a', function () {
+        // 需要用户信息的先判断登录状态
+        var href = this.getAttribute('href');
+        // console.log(href);
+        //非plus环境，直接走href跳转
+        if (!mui.os.plus) {
+            location.href = href;
+            return;
+        }
+        var id = this.getAttribute("id");
+        //AoBaojs.setLocalStorage('mall_id', id);
+        //console.log(id);
+        if (!id) {
+            id = href;
+        }
+        if (href && ~href.indexOf('.html')) {
+            //打开窗口的相关参数
+            var options = {
+                styles: {
+                    popGesture: "hide",
+                },
+                show: {
+                    autoShow: true, //页面loaded事件发生后自动显示，默认为true
+                    aniShow: 'slide-in-right', //页面显示动画，默认为”slide-in-right“；
+                    duration: 250 //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+                },
+                waiting: {
+                    autoShow: false, //自动显示等待框，默认为true}
+                },
+                extras: {}
+            };
+            //打开新窗口 这种打开方式不好,需要改进
+            mui.openWindow(href, id, options);
+        }
+    });
+</script>
+</html>

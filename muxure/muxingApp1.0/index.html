@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/mui.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <style>
+        .mui-tab-item {
+            font-size: 30px;
+        }
+
+        .mui-bar-tab .mui-active .mui-icon ~ .mui-tab-label {
+            font-size: 11px;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+    </style>
+</head>
+<body>
+
+<nav class="mui-bar mui-bar-tab navs-tab">
+
+    <a id="defaultTab" class="mui-tab-item mui-active" href="html/Home/index.html">
+        <span class="mui-icon icon icon_home"></span><br/>
+        <span class="mui-tab-label">主页</span>
+    </a>
+
+
+    <a class="mui-tab-item" href="html/Message/index.html">
+        <span class="mui-icon icon icon_message"></span><br/>
+        <span class="mui-tab-label">消息</span>
+    </a>
+
+    <a class="mui-tab-item" href="html/Mine/index.html">
+        <span class="mui-icon icon icon_myself"></span><br/>
+        <span class="mui-tab-label">我的</span>
+    </a>
+</nav>
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    /**
+     * $(obj).addClass('activity');
+     $(obj).siblings().removeClass('activity');
+     */
+    mui.init();
+    var subpages = ['html/Home/index.html',
+        'html/Message/index.html', 'html/Mine/index.html'
+    ];
+    var subpages_id = ['frameHome', 'frameMessage', 'frameMine'];
+    var activeTab = subpages[0];
+
+    var currentWebview;
+    var subpage_style = [{
+        top: '0px', //去掉标题栏高度
+        bottom: '50px'
+    }, {
+        top: '0px', //去掉标题栏高度
+        bottom: '50px'
+    }, {
+        top: '0px', //去掉标题栏高度
+        bottom: '50px',
+        statusbar: {
+            background: '#8C8C8C'
+        },
+    }, {
+        top: '0px', //去掉标题栏高度
+        bottom: '50px',
+        statusbar: {
+            background: '#8C8C8C'
+        },
+    }, {
+        top: '0px', //去掉标题栏高度
+        bottom: '50px'
+    }];
+    mui.plusReady(function () {
+        currentWebview = plus.webview.currentWebview();
+        var secondWenview = plus.webview.getSecondWebview();
+        currentWebview.append(secondWenview);
+        start();
+    });
+    // 默认打开显示第一页
+
+    mui('.mui-bar-tab').on('tap', 'a', function () {
+        var targetTab = this.getAttribute('href');
+        if (targetTab == activeTab) {
+            return;
+        }
+        var targetWebview = plus.webview.getWebviewById(targetTab);
+        if (!targetWebview) {
+            targetWebview = plus.webview.create(targetTab, targetTab,
+                subpage_style[0]);
+            currentWebview.append(targetWebview);
+        }
+        targetWebview.show();
+        plus.webview.hide(activeTab);
+        activeTab = targetTab;
+    })
+    var aniShow = {};
+
+    function start() {
+        try {
+            var self = plus.webview.currentWebview();
+            var temp = {};
+            for (var i = 0; i < 3; i++) {
+                var _viewId = plus.webview.getWebviewById(subpages_id[i]); //先判断是否存在,存在直接刷新
+                if (!_viewId) {
+                    var sub = plus.webview.create(subpages[i], subpages_id[i], subpage_style[i]);
+                    if (i > 0) {
+                        sub.hide();
+                    } else {
+                        temp[subpages_id[i]] = "true";
+                        $.extend(aniShow, temp);
+                    }
+                } else {
+                    _viewId.reload(true);
+                }
+                self.append(sub);
+            }
+        } catch (ex) {
+            console.log(ex);
+        }
+    }
+</script>
+
+</html>

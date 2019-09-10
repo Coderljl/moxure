@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/mui.min.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        body {
+            background: #EEEEEE;
+        }
+
+        .mineTitle {
+            position: fixed;
+            top: 0;
+            z-index: 999;
+            width: 100%;
+            background: #9999FF;
+            padding-top: 2rem;
+            height: 4.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .mineTitle p {
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            color: white;
+        }
+
+        .mui-icon-arrowleft:before {
+            /* position: absolute;
+            top: 1rem;*/
+            font-size: 2rem;
+            color: white;
+        }
+
+        .mui-icon-plusempty:before {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .listInfo {
+            margin-top: 0.2rem !important;
+            width: 95%;
+            margin: 0 auto;
+            border-radius: 0.8rem;
+            background: #FFFFFF;
+            margin-bottom: 20px;
+            border: 1px solid #D7D7D7;
+        }
+
+        .teamInfo {
+            margin-top: 4.8rem !important;
+            width: 95%;
+            height: 6rem;
+            margin: 0 auto;
+            border: 1px solid #D7D7D7;
+            border-radius: 0.8rem;
+            background: #FFFFFF;
+
+        }
+
+        .info {
+            border-bottom: 1px solid #D7D7D7;
+            height: 3rem;
+            line-height: 3rem;
+            text-indent: 1rem;
+            position: relative;
+        }
+
+        .extraInfo {
+            height: auto;
+            line-height: 3rem;
+            text-indent: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .startAddress,
+        .endAddress,
+        .teamNum {
+            margin-left: 1rem;
+            color: #000000;
+        }
+
+        .address {
+            padding-top: 0.5rem;
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        .arrowPic {
+            background-size: 40%;
+        }
+
+        .line {
+            position: relative;
+        }
+
+        .straight {
+            width: 200px;
+            height: 2px;
+            background: #000000;
+        }
+
+        .straightSmall {
+            position: absolute;
+            top: -5px;
+            left: 180px;
+            width: 20px;
+            height: 2px;
+            background: #000000;
+            transform: rotate(30deg);
+        }
+
+        .icon_uniE900:before,
+        .path2 {
+            font-size: 1px;
+            color: #696969;
+        }
+
+        .data {
+            position: relative;
+        }
+
+        .time {
+            width: 7rem;
+            text-align: center;
+            position: absolute;
+            top: -5px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            color: #757575;
+            /* justify-content: center; */
+        }
+
+        .startAddr,
+        .endAddr {
+            color: #000000;
+            font-size: 1.2rem;
+            /* border: 1px solid #f00; */
+            width: 10rem;
+            text-align: center;
+            margin: 5px 8px;
+            font-weight: bold;
+        }
+
+        .lable {
+            background: #9966FF;
+            color: #FFFFFF;
+            padding: 0.3125rem;
+            border-radius: 1.25rem;
+            font-size: 0.9125rem;
+            margin-left: 1rem;
+            position: relative;
+            top: 0.325rem;
+        }
+
+        .remarkDetail {
+            height: 1rem;
+        }
+
+        .content {
+            margin: 0;
+            width: 90%;
+            line-height: 1.5rem;
+            margin-left: 1rem;
+            margin-top: 0.5rem;
+            color: #000000;
+            font-size: 1.15rem;
+        }
+
+        .contentPic {
+            margin-top: 10px;
+            margin-left: 1rem;
+            width: 90%;
+        }
+
+        .icon_uniE900:before {
+            font-size: 2px !important;
+            /* border:0.125rem solid #000000  ; */
+        }
+
+        .path2 {
+            font-size: 2px;
+        }
+
+        .start,
+        .end {
+            text-align: center;
+            /* border: 2px solid #000000; */
+            color: #A9A9A9;
+        }
+
+        .userHead {
+            /* margin-top: 0.5rem; */
+            height: 1.5rem;
+        }
+
+        .userAdminhead {
+            height: 2rem;
+            position: absolute;
+            top: 0.5rem;
+            left: 5rem;
+        }
+
+        .userAdminname {
+            height: 2rem;
+            position: absolute;
+            top: 0rem;
+            left: 6.5rem;
+        }
+
+        .picGroup {
+            position: absolute;
+            top: 0.3rem;
+            text-align: left;
+            /* border: 2px solid #f00; */
+            width: 10rem;
+            margin-left: 20%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="mineTitle">
+    <span id="return" class="mui-icon mui-icon mui-icon-arrowleft"></span>
+    <p>我的组队</p>
+    <span class="mui-icon mui-icon-plusempty"></span>
+</div>
+
+<div class=" teamInfo">
+    <div class="address">
+        <p class="start">出发</p>
+        <p style="color: #757575;">2019</p>
+        <p class="end">到达</p>
+    </div>
+
+
+    <div class="address">
+        <p class="startAddr">成都</p>
+        <div class="data">
+            <p class="time"><span>7月1日</span>--<span>7月3日</span></p>
+            <span class="icon icon_80PX"></span>
+            <center>
+                <p style="color: #757575;">9:00am</p>
+            </center>
+        </div>
+        <span class="endAddr">呼伦贝尔</span>
+    </div>
+
+</div>
+
+<ul class=" listInfo">
+    <li class="info">
+        <p>始发地地址:<span class="startAddress">四川省成都市</span></p>
+    </li>
+    <li class="info">
+        <p>目的地地址:<span class="endAddress">内蒙古鄂尔多斯市</span></p>
+    </li>
+    <li class="info">
+        <p>队伍人数:<span class="teamNum">3/5</span>
+            <span class="picGroup">
+						<img class="userHead" src="../../img/headPic.jpg"/>
+						<img class="userHead" src="../../img/headPic.jpg"/>
+						<img class="userHead" src="../../img/headPic.jpg"/>
+						<img class="userHead" src="../../img/headPic.jpg"/>
+						<img class="userHead" src="../../img/headPic.jpg"/>
+					</span>
+        </p>
+
+    </li>
+    <li class="info">
+        <p>发起人:</p><img class="userAdminhead" src="../../img/headPic.jpg"/><span class="userAdminname">Jon</span>
+    </li>
+    <li class="extraInfo">
+        <p class="remarkDetail">备注描述:</p>
+        <span class="lable">#骑行#</span>
+        <p class="content">我可以跟在你身后
+            像影子追着光梦游
+            我可以等在这路口
+            不管你会不会经过
+            每当我为你抬起头
+            连眼泪都觉得自由
+            有的爱像大雨滂沱
+            却依然相信彩虹
+
+        </p>
+        <!-- <img class="contentPic" src="../../img/zhuiguangzhe.jpg" /> -->
+
+    </li>
+</ul>
+</body>
+<script src="../../js/mui.min.js"></script>
+<script src="../../js/jquery-3.2.1.min.js"></script>
+<script>
+    mui.init({
+        keyEventBind: {
+            backbutton: true,
+            menubutton: false
+        }
+    });
+    $("#return").click(function () {
+        mui.back();
+    })
+</script>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/mui.min.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .mineTitle {
+            padding-top: 70px;
+            background: #9999FF;
+            height: 11rem;
+        }
+
+        .mineTitle p {
+            font-size: 3.5rem;
+            height: 6rem;
+            line-height: 7rem;
+            text-align: center;
+            color: white;
+        }
+
+        .mui-icon-back:before {
+            position: absolute;
+            font-size: 6.5rem;
+            line-height: 7rem;
+            top: 4.5rem;
+            color: white;
+        }
+
+        .accountSetting, .infoSetting, .appInfosetting {
+            margin-top: 1.25rem;
+        }
+
+        .accountSetting li, .infoSetting li, .appInfosetting li {
+            height: 7rem;
+            font-size: 3rem;
+            line-height: 7rem;
+            border-bottom: 2px solid #D8D8D8;
+            color: #666666;
+            text-indent: 2.125rem;
+        }
+
+        .mui-icon-forward:before {
+            position: absolute;
+            right: 2.125rem;
+            font-size: 5rem;
+            margin-top: -3.5rem;
+            color: #D1D1FF;
+        }
+
+        .accountSetting li:first-child, .infoSetting li:first-child, .appInfosetting li:first-child {
+            border-top: 2px solid #D8D8D8;
+        }
+
+        .btn {
+            display: block;
+            margin: 0 auto;
+            margin-top: 3.125rem;
+            width: 100%;
+            height: 7rem;
+            font-size: 3rem;
+            border: none;
+            background: white;
+            color: #FF3300;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<!-- 导航栏 -->
+<div class="mineTitle">
+    <p>消息</p>
+</div>
+</body>
+<script src="../../js/mui.min.js"></script>
+<script src="../../js/jquery-3.2.1.min.js"></script>
+<script>
+    mui.init({
+        keyEventBind: {
+            backbutton: true,
+            menubutton: false
+        }
+    });
+
+</script>
+</html>

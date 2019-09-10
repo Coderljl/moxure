@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/mui.min.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .mineTitle {
+            padding-top: 70px;
+            background: #9999FF;
+            height: 1rem;
+        }
+
+        .mineTitle p {
+            display: block;
+            position: absolute;
+            font-size: 1.2rem;
+            text-align: center;
+            top: 2.5rem;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            color: white;
+            justify-content: space-around;
+        }
+
+        .mui-icon-back:before {
+            position: absolute;
+            font-size: 3rem;
+            line-height: 6rem;
+            top: 0rem;
+            color: white;
+        }
+
+
+        .cardInfo {
+            width: 100%;
+        }
+
+        .trapCard {
+            margin: 0.625rem;
+            display: flex;
+            flex-direction: row;
+            background: #FFFFFF;
+            height: 9.1rem;
+            border-radius: 0.625rem;
+            box-shadow: 2px 2px 5px #999;
+            overflow: hidden
+        }
+
+        .trapPic {
+            width: 116px;
+            height: 136px;
+            margin: 0.25rem;
+            margin-right: 0.55rem;
+
+        }
+
+        .journey,
+        .peopleNum,
+        .date {
+            width: 100%;
+            padding: 0;
+            margin-top: 0.75rem;
+            font-size: 0.66rem;
+            color: #999999;
+        }
+
+        .peopleNum {
+            margin-top: 0.15rem;
+        }
+
+        .date {
+            width: 5rem;
+            font-size: 0.8rem;
+            /* border: 2px solid #FF0000; */
+        }
+
+        .address {
+            width: 100%;
+            position: relative;
+            height: 1.25rem;
+            margin-top: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .address .departure {
+            display: inline-block;
+            position: absolute;
+            width: 5.8rem;
+            text-align: left;
+            /* border: 2px solid #f00; */
+        }
+
+        .address .iconPosition {
+            position: absolute;
+            left: 45%;
+            display: inline-block;
+        }
+
+        .address .goal {
+            position: absolute;
+            right: 1rem;
+            display: inline-block;
+            width: 5rem;
+            text-align: right;
+        }
+
+        .userInfo {
+            position: absolute;
+            display: flex;
+            overflow: hidden
+            width: 100%;
+            position: relative;
+            top: 1.3rem;
+            font-size: 1.5rem;
+            bottom: 0.25rem;
+        }
+
+        .headInfo {
+            height: 2.5rem;
+            width: 2.5rem;
+            border-radius: 100%;
+        }
+
+        .Nickname,
+        .date {
+            margin: 0;
+            padding: 0;
+            left: 0.85rem;
+        }
+
+        .Nickname {
+            color: #000000;
+        }
+
+        .date {
+            /* border: 2px solid red; */
+        }
+
+        .btn {
+            display: block;
+            position: absolute;
+            right: 0.5rem;
+            top: 0.2rem;
+            border: none;
+            border-radius: 20px;
+            height: 2.25rem;
+            color: #FFFFFF;
+            font-weight: bold;
+            width: 4.8rem;
+        }
+
+        .jionBtn {
+            background: #CC99FF;
+        }
+
+        .jionedBtn {
+            background: #9999FF;
+        }
+
+        .endBtn {
+            background: #C9C9C9;
+        }
+
+        .icon_home:before {
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+<!-- 导航栏 -->
+<div class="mineTitle">
+    <p>我的出行</p>
+    <span id="return" class="mui-icon mui-icon-back"></span>
+</div>
+
+<div class="trapCard">
+    <img class="trapPic" src="../../img/jay.jpg"/>
+    <div class="cardInfo">
+        <div class="address">
+            <span class="departure icon icon_home">成都1515</span>
+            <span class="iconPosition">→</span>
+            <span class="goal icon icon_home">拉萨</span>
+        </div>
+        <div class="journey">行程：<span>2019年9月7日</span>&nbsp;-&nbsp;<span>2019年9月8日</span></div>
+        <div class="peopleNum">出行人数：<span>3</span>/<span>5</span></div>
+        <div class="userInfo">
+            <img class="headInfo" src="../../img/jay.jpg"/>
+            <div>
+                <p class="Nickname">周杰伦</p>
+                <p class="date">2019-07-01</p>
+            </div>
+            <button class="jionBtn btn" style="display: none;">JOIN IN</button>
+            <button class="jionedBtn btn">已加入</button>
+            <button class="endBtn btn" style="display: none;">一结束</button>
+        </div>
+    </div>
+</div>
+
+<div class="trapCard">
+    <img class="trapPic" src="../../img/jay.jpg"/>
+    <div class="cardInfo">
+        <div class="address">
+            <span class="departure">成都</span>
+            <span class="iconPosition">→</span>
+            <span class="goal">拉萨</span>
+        </div>
+        <div class="journey">行程：<span>2019年9月7日</span>-<span>2019年9月8日</span></div>
+        <div class="peopleNum">出行人数：<span>3</span>/<span>5</span></div>
+        <div class="userInfo">
+            <img class="headInfo" src="../../img/jay.jpg"/>
+            <div>
+                <p class="Nickname">周杰伦</p>
+                <p class="date">2019-07-01</p>
+            </div>
+            <button class="jionBtn btn" style="display: none;">JOIN IN</button>
+            <button class="jionedBtn btn" style="display: none;">已加入</button>
+            <button class="endBtn btn">已结束</button>
+        </div>
+    </div>
+</div>
+
+<div class="trapCard">
+    <img class="trapPic" src="../../img/jay.jpg"/>
+    <div class="cardInfo">
+        <div class="address">
+            <span class="departure">成都</span>
+            <span class="iconPosition">→</span>
+            <span class="goal">拉萨</span>
+        </div>
+        <div class="journey">行程：<span>2019年9月7日</span>-<span>2019年9月8日</span></div>
+        <div class="peopleNum">出行人数：<span>3</span>/<span>5</span></div>
+        <div class="userInfo">
+            <img class="headInfo" src="../../img/jay.jpg"/>
+            <div>
+                <p class="Nickname">周杰伦</p>
+                <p class="date">2019-07-01</p>
+            </div>
+            <button class="jionBtn btn">JOIN IN</button>
+            <button class="jionedBtn btn" style="display: none;">已加入</button>
+            <button class="endBtn btn" style="display: none;">一结束</button>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../../js/mui.min.js"></script>
+<script src="../../js/jquery-3.2.1.min.js"></script>
+<script>
+    mui.init({
+        keyEventBind: {
+            backbutton: true,
+            menubutton: false
+        }
+    });
+    $("#return").click(function () {
+        mui.back();
+    })
+</script>
+</html>
