@@ -1,96 +1,120 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="../../css/mui.min.css"/>
-    <link rel="stylesheet" href="../../css/style.css"/>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="../../css/mui.min.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
 
-        ul li {
-            list-style: none;
-        }
+			ul li {
+				list-style: none;
+			}
 
-        .mineTitle {
-            padding-top: 70px;
-            background: #9999FF;
-            height: 11rem;
-        }
+			.mineTitle {
+				padding-top: 70px;
+				background: #9999FF;
+				height: 1rem;
+			}
 
-        .mineTitle p {
-            font-size: 3.5rem;
-            height: 6rem;
-            line-height: 7rem;
-            text-align: center;
-            color: white;
-        }
+			.mineTitle p {
+				display: block;
+				position: absolute;
+				font-size: 1.2rem;
+				text-align: center;
+				top: 2.5rem;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				color: white;
+			}
 
-        .mui-icon-back:before {
-            position: absolute;
-            font-size: 6.5rem;
-            line-height: 7rem;
-            top: 4.5rem;
-            color: white;
-        }
+			.mui-icon-back:before {
+				position: absolute;
+				font-size: 3rem;
+				line-height: 6rem;
+				top: 0rem;
+				color: white;
+			}
 
-        .accountSetting, .infoSetting, .appInfosetting {
-            margin-top: 1.25rem;
-        }
-
-        .accountSetting li, .infoSetting li, .appInfosetting li {
-            height: 7rem;
-            font-size: 3rem;
-            line-height: 7rem;
-            border-bottom: 2px solid #D8D8D8;
-            color: #666666;
-            text-indent: 2.125rem;
-        }
-
-        .mui-icon-forward:before {
-            position: absolute;
-            right: 2.125rem;
-            font-size: 5rem;
-            margin-top: -3.5rem;
-            color: #D1D1FF;
-        }
-
-        .accountSetting li:first-child, .infoSetting li:first-child, .appInfosetting li:first-child {
-            border-top: 2px solid #D8D8D8;
-        }
-
-        .btn {
-            display: block;
-            margin: 0 auto;
-            margin-top: 3.125rem;
-            width: 100%;
-            height: 7rem;
-            font-size: 3rem;
-            border: none;
-            background: white;
-            color: #FF3300;
-            border-radius: 10px;
-        }
-    </style>
-</head>
-<body>
-<!-- 导航栏 -->
-<div class="mineTitle">
-    <p>消息</p>
-</div>
-</body>
-<script src="../../js/mui.min.js"></script>
-<script src="../../js/jquery-3.2.1.min.js"></script>
-<script>
-    mui.init({
-        keyEventBind: {
-            backbutton: true,
-            menubutton: false
-        }
-    });
-
-</script>
+			.mui-icon-forward:before {
+				position: absolute;
+				right: 2.125rem;
+				font-size: 5rem;
+				margin-top: -3.5rem;
+				color: #D1D1FF;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 导航栏 -->
+		<div class="mineTitle">
+			<p>消息</p>
+			<span id="return" class="mui-icon mui-icon-back"></span>
+		</div>
+		<ul id="OA_task_1" class="mui-table-view">
+			<li class="mui-table-view-cell">
+				<div class="mui-slider-right mui-disabled">
+					<a class="mui-btn mui-btn-red">删除</a>
+				</div>
+				<div class="mui-slider-handle">
+					<img class="mui-media-object mui-pull-left" src="../../img/notics.png">
+					<div class="mui-media-body">
+						<span class="notice">系统消息</span><div class="list-time">09:34</div>
+						<p class="mui-ellipsis">请输入请输入</p>
+					</div>
+				</div>
+			</li>
+			
+			<li class="mui-table-view-cell">
+				<div class="mui-slider-right mui-disabled">
+					<a class="mui-btn mui-btn-red">删除</a>
+				</div>
+				<div class="mui-slider-handle">
+					<img class="mui-media-object mui-pull-left" src="../../img/mine.png">
+					<div class="mui-media-body">
+						<span class="notice">格里菲斯</span><div class="list-time">09:34</div>
+						<p class="mui-ellipsis">请输入请输入</p>
+					</div>
+				</div>
+			</li>
+			
+			<li class="mui-table-view-cell">
+				<div class="mui-slider-right mui-disabled">
+					<a class="mui-btn mui-btn-red">删除</a>
+				</div>
+				<div class="mui-slider-handle">
+					<img class="mui-media-object mui-pull-left" src="../../img/mine.png">
+					<div class="mui-media-body">
+						<span class="notice">克里斯</span><div class="list-time">12:15</div>
+						<p class="mui-ellipsis">请输入请输入</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/jquery-3.2.1.min.js"></script>
+	<script>
+		mui.init({
+			keyEventBind: {
+				backbutton: true,
+				menubutton: false
+			}
+		});
+		
+		(function($) {
+			$('#OA_task_1').on('tap', '.mui-btn', function(event) {
+				var elem = this;
+				var li = elem.parentNode.parentNode;
+				li.parentNode.removeChild(li);
+			});
+		})(mui);
+	</script>
 </html>

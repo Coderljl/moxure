@@ -158,13 +158,13 @@
 </div>
 <!-- 头部内容信息 -->
 <div class="userInfo">
-    <img class="headInfo" src="../../img/jay.jpg"/>
+    <img class="headInfo" src="../../img/headPic.jpg"/>
     <div class="wordsInfo">
         <p class="Nickname">
-            周杰伦
+           点击登陆
         </p>
         <p class="signature">
-            窝窝头，1块钱4个。
+           登陆后体验更多功能
         </p>
     </div>
     <div class="other">
@@ -233,5 +233,14 @@
             mui.openWindow(href, id, options);
         }
     });
+	$(".wordsInfo").click(function(){
+		mui.openWindow({
+		            url: 'login.html', //String类型,要打开的界面的地址
+		            show: {
+		                aniShow: 'slide-in-right',
+		                duration: 200
+		            }
+		        })
+	})
 </script>
 </html>

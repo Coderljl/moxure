@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" href="../../css/style.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<style>
+			body{
+				background: #fff;
+			}
+			 .mineTitle {
+			    padding-top: 70px;
+			    background: #fff;
+			    height: 1rem;
+			}
+			
+			.mineTitle p {
+			    display: block;
+			    position: absolute;
+			    font-size: 1.2rem;
+			    text-align: center;
+			    top: 2.5rem;
+			    left: 0;
+			    right: 0;
+			    margin: 0 auto;
+			    color: white;
+			    justify-content: space-around;
+			}
+			
+			.mui-icon-back:before {
+			    position: absolute;
+			    font-size: 3rem;
+			    line-height: 6rem;
+			    top: 0rem;
+			    color: #9F9FFF;
+			}
+			.logo{
+				width: 150px;
+				margin: 0 auto;
+				text-align: center;
+				margin-top: 1rem;
+				border-radius:20px;
+			}
+			.tip{
+				text-align: center;
+				margin-top: 2rem;
+				color: #9F9FFF;
+				font-size: 1rem;
+				padding-bottom: 0.5rem;
+				
+			}
+			.line{
+				width: 60%;
+				border: 1px solid #D5D5D5;
+				margin: 0 auto;
+			}
+			.telArea{
+				position: relative;
+				width: 80%;
+				border-radius: 10px;
+				margin: 0 auto;
+				margin-top: 20px;
+			}
+			.iconPosition{
+				position: absolute;
+				font-size: 2.25rem;
+				top: 0.25rem;
+				color: #666;
+			}
+			.telInput[type=number]{
+				height: 3rem;
+				border: none;
+				background: #F7F7FF; 
+				text-indent: 1.5rem;
+				
+			}
+			.pwdArea{
+				display: flex;
+				position: relative;
+				width: 80%;
+				margin: 0 auto;
+			}
+			.pwdArea .telInput{
+				width: 60%;
+			}
+			.btn{
+				margin-left: 5%;
+				width: 35%;
+				height: 3rem;
+				line-height: 3rem;
+				border: none;
+				font-size: 1.1rem;
+				text-align: center;
+				background: #CC99FF;
+				border-radius:10px ;
+				color: #FFFFFF;
+			}
+			.login{
+				width: 80%;
+				margin: 0 auto;
+				text-align: center;
+				height: 3rem;
+				line-height: 3rem;
+				font-size:1.3rem;
+				background: #9999FF;
+				border-radius: 10px;
+				color: #fff;
+				margin-top: 1rem;
+			}
+			.protocol{
+				margin-top: 1rem;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 导航栏 -->
+		<div class="mineTitle">
+		    <span id="return" class="mui-icon mui-icon-back"></span>
+		</div>
+		<div class="logo">
+			<img class="logo" src="../../img/logo.png" />
+		</div>
+		<p class="tip">手机号快捷注册/登陆</p>
+		<div class="line"></div>
+		<div class="telArea">
+			<i class="icon icon_message iconPosition"></i>
+			<input class="telInput" type="number" placeholder="您的手机号" />
+		</div>
+		
+		<div class="pwdArea">
+			<i class="icon icon_message iconPosition"></i>
+			<input class="telInput" type="number" placeholder="您的手机号" />
+			<div class="btn">获取验证码</div>
+		</div>
+		
+		<div class="login">登录</div>
+		
+		<p class="protocol">登录代表你同意<a href="">用户协议</a>和<a href="">隐私政策</a></p>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/jquery-3.2.1.min.js"></script>
+	<script>
+	    mui.init({
+	        keyEventBind: {
+	            backbutton: true,
+	            menubutton: false
+	        }
+	    });
+	    $("#return").click(function () {
+	        mui.back();
+	    })
+		$(".btn").click(function(){
+			var a = $(".telInput").val();
+			console.log(a)
+		})
+	</script>
+</html>
