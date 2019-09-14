@@ -294,6 +294,15 @@
     $(".user").click(function () {
         mui.back();
     })
-
+	 $(".trapCard").click(function () {
+	    console.log(66)
+	    mui.openWindow({
+	        url: 'detail.html', //String类型,要打开的界面的地址
+	        show: {
+	            aniShow: 'slide-in-right',
+	            duration: 200
+	        }
+	    })
+	})
 </script>
 </html>

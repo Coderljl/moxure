@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="../../css/mui.min.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<style>
+			html,
+			body,
+			.mui-content {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				-webkit-user-select: none;
+				/*防止长按复制*/
+				background: #FFF;
+				padding-top:10px ;
+			}
+
+			/*聊天气泡列表父容器*/
+			.chat-list {
+				height: 100%;
+				overflow: auto;
+				padding-bottom: 50px;
+			}
+			/*清除浮动*/
+			.chat-box {
+				max-width: 80%;
+				clear: both;
+			}
+
+			/*头像大小*/
+			.chat-avatar {
+				height: 35px;
+				width: 35px;
+			}
+
+			.chat-contant {
+				border: 1px solid #D8D8D8;
+				padding: 10px;
+				border-radius: 7px;
+				max-width: 70%;
+				min-width: 35px;
+				position: relative;
+			}
+
+			/*让气泡英文字符换行*/
+			.chat-contant .chat-content-inner {
+				word-wrap: break-word;
+			}
+
+			/* 左边小箭头 */
+			.chat-box-left .chat-content-arrow {
+				width: 10px;
+				height: 10px;
+				border: 1px solid #D8D8D8;
+				background: #fff;
+				border-top: none;
+				border-right: none;
+				/*往Z轴反转45度*/
+				transform: rotateZ(45deg);
+				-webkit-transform: rotateZ(45deg);
+				position: absolute;
+				left: -5px;
+				top: 12px;
+				
+			}
+			.chat-box-right .chat-content-arrow {
+				width: 10px;
+				height: 10px;
+				border: 1px solid #D8D8D8;
+				background: #fff;
+				border-top: none;
+				border-right: none;
+				/*往Z轴反转45度*/
+				transform: rotateZ(225deg);
+				-webkit-transform: rotateZ(225deg);
+				position: absolute;
+				right: -5px;
+				top: 12px;
+				background: #a9e55c;
+			}
+			
+			/*左边气泡的位置*/
+			.chat-box-left .chat-contant {
+				float: left;
+				margin-left: 15px;
+			}
+
+			/*左边头像的位置*/
+			.chat-box-left .chat-avatar {
+				float: left;
+			}
+			.chat-box.chat-box-left{
+				float: left;
+			}
+			
+			.chat-box.chat-box-right{
+				float: right;
+			}
+			/*右边气泡的位置*/
+			.chat-box-right .chat-contant {
+				float: right;
+				margin-right: 15px;
+				background: #a9e55c;
+			}
+
+			/*右边头像的位置*/
+			.chat-box-right .chat-avatar {
+				float: right;
+			}
+			
+			/*聊天时间条*/
+			.chat-box-time{
+				text-align: center;
+				margin: 15px 0;
+			}
+			.chat-time{
+				font-size: 13px;
+				background-color: #cfcfcf;
+				color: #fff;
+				border-radius:3px ;
+				padding: 2px 4px;
+			}
+			footer{
+				position: fixed;
+				width: 100%;
+				left: 0;
+				bottom: 0;
+				height: 50px;
+				min-height: 50px;
+				background-color:#FAFAFA ;
+				border-bottom: 1px solid #F2F1F1;
+				padding: 0 80px 0 40px;
+			}
+			.footer-center{
+				height: 100%;
+				width: 72%;
+				padding: 5px 0;
+				position: absolute;
+				left: 5%;
+			}
+			.footer-right{
+				height: 100%;
+				width: 22%;
+				position: absolute;
+				right: 0;
+				top: 0px;
+				padding: 7px 5px;
+				text-align: center;
+			}
+			/* 图表样式 */
+			.icon_message:before{
+				font-size: 28px;
+				color: #000000;
+			}
+			.input-text{
+				width: 100%;
+				height: 100%;
+				border-radius: 5px;
+				font-size: 16px;
+				overflow: hidden;
+				line-height: 18px;
+				border: 1px solid #ddd;
+			}
+			/* 发送按钮 */
+			#send{
+				display: block;
+				margin: 0;
+				padding: 0;
+				height: 35px;
+				width: 80%;
+			}
+			.btn{
+				background: #B6B6B6 !important;
+				border: none;
+			}
+			.send-btn{
+				background: #4E4EDD;
+				color: #fff;
+				border: none;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">系统消息</h1>
+			<!-- <a class="mui-pull-right"><i class="mui-icon mui-icon-person-filled"></i></a> -->
+		</header>
+		<div class="mui-content">
+			<div class="chat-list">
+				<div class="chat-box-time">
+					<span class="chat-time">昨天10:00</span>
+				</div>
+				<!-- 左气泡 -->
+				<div class="chat-box chat-box-left mui-content-padded">
+					<img class="chat-avatar" src="../../img/notics.png">
+					<div class="chat-contant">
+						<div class="chat-content-inner">
+							欢迎使用暮行App,愉快出行，从现在开始。
+						</div>
+						<div class="chat-content-arrow">
+
+						</div>
+					</div>
+					<div class="chat-float"></div>
+				</div>
+
+				<!-- 右气泡 -->
+				<!-- 	<div class="chat-box chat-box-right mui-content-padded">
+					<img class="chat-avatar" src="../../img/headPic.jpg">
+					<div class="chat-contant">
+						<div class="chat-content-inner">
+							你好你好
+						</div>
+						<div class="chat-content-arrow">
+
+						</div>
+					</div>
+					<div class="chat-float"></div>
+				</div> -->
+
+			</div>
+		</div>
+		<footer>
+
+			<div class="footer-center">
+				<textarea id="msg-input" class="input-text"></textarea>
+			</div>
+			<div class="footer-right">
+				<button id="send" type="button" class="mui-btn send-btn btn" disabled="disabled">
+					发送
+				</button>
+			</div>
+		</footer>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/jquery-3.2.1.min.js"></script>
+	<script>
+		mui.init();
+		var send = document.getElementById('send');
+		//表情
+		var emoticmoreons = document.getElementById('emoticmoreons');
+		//更多
+		var more = document.getElementById('more');
+		document.getElementById('msg-input').addEventListener('input', function() {
+
+			console.info(this.value);
+			if (this.value.trim().length > 0) {
+				$("#send").removeClass("btn");
+				$("#send").attr('disabled', false);
+				console.log(66);
+				//发送按钮显示,把表情更多隐藏
+			} else {
+				$("#send").addClass("btn");
+				
+				//发送表情更多显示,把按钮隐藏
+
+			}
+		});
+		document.getElementById('send').addEventListener('tap', function() {
+			var msgIput = document.getElementById('msg-input');
+			var msgValue = msgIput.value;
+			var willSendMsg = '<div class="chat-box chat-box-right mui-content-padded">' +
+				'<img class="chat-avatar" src="../../img/headPic.jpg">' +
+				'<div class="chat-contant">' +
+				'	<div class="chat-content-inner">' +
+				msgValue +
+				'	</div>' +
+				'	<div class="chat-content-arrow">' +
+				'	</div>' +
+				'	</div>' +
+				'	<div class="chat-float"></div>' +
+				'	</div>';
+			var newDom = document.createElement('div');
+			newDom.innerHTML = willSendMsg
+			var msgList = document.querySelector('.chat-list');
+			//把拼接好的气泡html追加到html末尾
+			msgList.appendChild(newDom);
+			//清空文本输入
+			msgIput.value = '';
+			//显示表情更多,隐藏发送按钮
+			$("#send").addClass("btn");
+			$("#send").attr('disabled', true);
+			//最新消息在底部
+			msgList.scrollTop = msgList.scrollHeight - msgList.offsetHeight;
+		})
+	</script>
+</html>

@@ -702,7 +702,8 @@ p {
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
 	-webkit-box-shadow: none;
-	box-shadow: none
+	box-shadow: none;
+	
 }
 
 .mui-off-canvas-wrap {
@@ -1269,12 +1270,13 @@ input[type=submit]:enabled:active {
 	z-index: 10;
 	right: 0;
 	left: 0;
-	height: 44px;
+	height: 65px;
+	padding-top: 20px;
 	padding-right: 10px;
 	padding-left: 10px;
 	border-bottom: 0;
-	background-color: #f7f7f7;
-	-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .85);
+	background-color: #9999FF;
+	/* -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .85); */
 	box-shadow: 0 0 1px rgba(0, 0, 0, .85);
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden
@@ -1287,7 +1289,8 @@ input[type=submit]:enabled:active {
 	overflow: hidden;
 	width: auto;
 	margin: 0;
-	text-overflow: ellipsis
+	text-overflow: ellipsis;
+	color: white;
 }
 
 .mui-bar .mui-backdrop {
@@ -1457,11 +1460,13 @@ input[type=submit]:enabled:active {
 }
 
 .mui-bar .mui-btn-nav.mui-pull-left {
-	margin-left: -5px
+	margin-left: -5px;
+	color: white;
 }
 
 .mui-bar .mui-btn-nav.mui-pull-left .mui-icon-left-nav {
-	margin-right: -3px
+	margin-right: -3px;
+	
 }
 
 .mui-bar .mui-btn-nav.mui-pull-right {
@@ -1914,7 +1919,7 @@ input[type=submit]:enabled:active {
 	position: absolute;
 	right: 0;
 	bottom: 0;
-	left: 15px;
+	left: 0px;
 	height: 1px;
 	content: '';
 	-webkit-transform: scaleY(.5);
@@ -4467,7 +4472,8 @@ body>.mui-progressbar {
 
 .mui-icon-back:before,
 .mui-icon-left-nav:before {
-	content: '\e471'
+	content: '\e471';
+	color: white;
 }
 
 .mui-icon-checkmarkempty:before {

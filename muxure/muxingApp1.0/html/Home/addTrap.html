@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="../../css/mui.min.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link href="../../css/mui.picker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.picker.min.css" />
+		<style>
+			p{
+				margin: 0;
+			}
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			.addressDetail{
+				display:block;
+				width: 128%;
+				padding: 0;
+				margin-top: 5px;
+				border: none;
+				font-size: 16px;
+			}
+			.addressDetailli{
+				padding-top: 0;
+				padding-bottom: 0;
+				margin: 0;
+			}
+			textarea::-webkit-input-placeholder {
+				color: #666;
+				font-size: 16px;
+			}
+			input::-webkit-input-placeholder {
+				color: #666;
+				font-size: 12px;
+				text-align: left;
+			}
+			.item{
+				color: #666;
+				font-size: 16px;
+			}
+			/*顶部分割线*/
+			.line{
+				border-top:5px solid #DDDDE0;
+			}
+			.trapCard{
+				background: #FFFFFF;
+			}
+			.titleTrap{
+				padding: 11px 15px;
+				font-size: 16px;
+				color: #666;
+			}
+			/*列表边界*/
+			#list{
+				border-bottom: 2.5px solid #DDDDE0;
+			}
+			/*最后一个元素边界*/
+			.lastLine{
+				border-bottom: 2.5px solid #DDDDE0;
+				
+			}
+			.trapTime,.trapNum{
+				margin-left: 30px;
+				padding-bottom: 10px;
+				color: #666;
+			}
+			.timeItem{
+				margin:0 5px;
+			}
+			input.numInput{
+				width: 30px;
+				height: 20px;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+			}
+			input.themeInput{
+				width:50%;
+				height: 20px;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+			}
+			input.textInput{
+				width:90%;
+				border: none;
+			}
+		</style>
+
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">发起组队</h1>
+			<!-- <a class="mui-pull-right"><i class="mui-icon mui-icon-person-filled"></i></a> -->
+		</header>
+
+		<div style="height: 65px"></div>
+		<ul id="list" class="mui-table-view mui-table-view-chevron">
+			<li class="mui-table-view-cell showCitystart">
+				<span class="mui-navigate-right">
+					<span class="item">始发地地址:</span>
+					<span id="cityResultstart" class="ui-alert"></span>
+				</span>
+			</li>
+			<li class="mui-table-view-cell showCitystart addressDetailli">
+				<!-- <p>详细地址</p> -->
+				<textarea class=" addressDetail" placeholder="始发地详细地址:"></textarea>
+			</li>
+
+			<li class="mui-table-view-cell showCityend line">
+				<span class="mui-navigate-right">
+					<span class="item">目的地地址:</span>
+					<span id="cityResultend" class="ui-alert"></span>
+				</span>
+			</li>
+			<li class="mui-table-view-cell  showCitystart addressDetailli lastLine">
+				<!-- <p>详细地址</p> -->
+				<textarea class=" addressDetail" placeholder="目的地详细地址:"></textarea>
+			</li>
+		</ul>
+		<div class="trapCard ">
+			<p class="titleTrap">行程规划</p>
+			<div class="trapTime">
+				-时间:
+				<span class="timeItem">
+					<span class="icon icon_5 timeIcon"></span>
+					<span id="resultStart" class="btnStart"   data-options='{"type":"date","beginYear":2014,"endYear":2020}'>请选择时间</span>
+				</span>
+				<span>--</span>
+				<span class="timeItem">
+					<span class="icon icon_5 timeIcon"></span>
+					<span id="resultEnd"  class="btnEnd"  data-options='{"type":"date","beginYear":2014,"endYear":2020}'>请选择时间</span>
+				</span>
+				
+			</div>
+			
+			<div class="trapNum">
+				-招募人数:
+				<input class="numInput" type="number" />
+			</div>
+			
+			<p class="titleTrap">行程描述</p>
+			<div class="trapTime">
+				-行程主题:
+			<input class="themeInput" type="number" placeholder="例：自驾游、自由行、骑行..."/>
+				
+			</div>
+			
+			<div class="trapNum ">
+				概述:
+				<input class="textInput" type="text"  placeholder="简要描述一下行程规划，吸引帅哥/美女加入哦～"/>
+			</div>
+		</div>
+		<div class="line" >
+			<p>* 可以上传一张展示图吸引别人加入哦～</p>
+		</div>
+	</body>
+	<script src="../../js/jquery-3.2.1.min.js"></script>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/mui.picker.js"></script>
+	<script type="text/javascript" src="../../js/mui.poppicker.js"></script>
+	<script type="text/javascript" src="../../js/mui.picker.min.js"></script>
+	<script type="text/javascript" src="../../js/city.data-3.js"></script>
+	<script>
+		//文件里定义了 var cityData3 = 一个区域的json对象;
+		(function($, doc, $$) {
+			$.init();
+			$.ready(function() {
+				/**
+				 * 获取对象属性的值
+				 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+				 * @param {Object} obj 对象
+				 * @param {String} param 属性名
+				 */
+				var _getParam = function(obj, param) {
+					return obj[param] || '';
+				};
+				//-----------------------------------------
+				//					//级联示例
+				var cityPicker3 = new $.PopPicker({
+					layer: 3
+				});
+				cityPicker3.setData(cityData3);
+				/*选择出发地址*/
+				var showCitystart = doc.querySelector('.showCitystart');
+				var cityResultstart = doc.querySelector('#cityResultstart');
+				showCitystart.addEventListener('tap', function(event) {
+					cityPicker3.show(function(items) {
+						cityResultstart.innerText = "" + _getParam(items[0], 'text') + " " + _getParam(items[1], 'text') + " " +
+							_getParam(items[2], 'text');
+						//返回 false 可以阻止选择框的关闭
+						//return false;
+					});
+				}, false);
+				/*选择目的地地址*/
+				var showCityend = doc.querySelector('.showCityend');
+				var cityResultend = doc.querySelector('#cityResultend');
+				showCityend.addEventListener('tap', function(event) {
+					cityPicker3.show(function(items) {
+						cityResultend.innerText = "" + _getParam(items[0], 'text') + " " + _getParam(items[1], 'text') + " " +
+							_getParam(items[2], 'text');
+						//返回 false 可以阻止选择框的关闭
+						//return false;
+					});
+				}, false);
+
+			});
+			
+			//选择开始时间
+			var resultStart = $('#resultStart')[0];
+			var btnStart = $('.btnStart');
+			btnStart.each(function(i, btn) {
+				btn.addEventListener('tap', function() {
+					var _self = this;
+					if(_self.picker) {
+						_self.picker.show(function (rs) {
+							resultStart.innerText =rs.text;
+							_self.picker.dispose();
+							_self.picker = null;
+						});
+					} else {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						/*
+						 * 首次显示时实例化组件
+						 * 示例为了简洁，将 options 放在了按钮的 dom 上
+						 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+						 */
+						_self.picker = new $.DtPicker(options);
+						_self.picker.show(function(rs) {
+							/*
+							 * rs.value 拼合后的 value
+							 * rs.text 拼合后的 text
+							 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+							 * rs.m 月，用法同年
+							 * rs.d 日，用法同年
+							 * rs.h 时，用法同年
+							 * rs.i 分（minutes 的第二个字母），用法同年
+							 */
+							resultStart.innerText = rs.text;
+							/* 
+							 * 返回 false 可以阻止选择框的关闭
+							 * return false;
+							 */
+							/*
+							 * 释放组件资源，释放后将将不能再操作组件
+							 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+							 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+							 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+							 */
+							_self.picker.dispose();
+							_self.picker = null;
+						});
+					}
+					
+				}, false);
+			});
+			
+			//选择结束时间
+			var resultEnd = $('#resultEnd')[0];
+			var btnEnd = $('.btnEnd');
+			btnEnd.each(function(i, btn) {
+				btn.addEventListener('tap', function() {
+					var _self = this;
+					if(_self.picker) {
+						_self.picker.show(function (rs) {
+							resultEnd.innerText =rs.text;
+							_self.picker.dispose();
+							_self.picker = null;
+						});
+					} else {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						/*
+						 * 首次显示时实例化组件
+						 * 示例为了简洁，将 options 放在了按钮的 dom 上
+						 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+						 */
+						_self.picker = new $.DtPicker(options);
+						_self.picker.show(function(rs) {
+							/*
+							 * rs.value 拼合后的 value
+							 * rs.text 拼合后的 text
+							 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+							 * rs.m 月，用法同年
+							 * rs.d 日，用法同年
+							 * rs.h 时，用法同年
+							 * rs.i 分（minutes 的第二个字母），用法同年
+							 */
+							resultEnd.innerText = rs.text;
+							/* 
+							 * 返回 false 可以阻止选择框的关闭
+							 * return false;
+							 */
+							/*
+							 * 释放组件资源，释放后将将不能再操作组件
+							 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+							 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+							 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+							 */
+							_self.picker.dispose();
+							_self.picker = null;
+						});
+					}
+					
+				}, false);
+			});
+		})(mui, document, jQuery);
+	</script>
+</html>

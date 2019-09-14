@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			 .mineTitle {
+			    padding-top: 70px;
+			    background: #9999FF;
+			    height: 1rem;
+			}
+			
+			.mineTitle p {
+			    display: block;
+			    position: absolute;
+			    font-size: 1.2rem;
+			    text-align: center;
+			    top: 2.5rem;
+			    left: 0;
+			    right: 0;
+			    margin: 0 auto;
+			    color: white;
+			}
+			 .mui-icon-back:before {
+			    position: absolute;
+			    font-size: 3rem;
+			    line-height: 6rem;
+			    top: 0rem;
+			    color: white;
+			}
+			.box1{
+				height: 2px;
+				background-color: deepskyblue;
+				margin-top: 44px;
+			}
+			
+			.img-head{
+				margin-left: 16px;
+			}
+			
+			.img-text-head{
+				margin-left: 120px;
+				margin-top: 10px;
+				font-size: 14px;
+			}
+			.information{
+				margin-top: 12px;
+			}
+			.information-text-left{
+				font-size: ;
+				color: #939393;
+				float: left;
+				margin: 6px 8px;
+			}
+			.information-text-center{
+				margin-top: 6px;
+				margin-left: 120px;
+				font-size: 14px;
+			}
+			.mui-icon-left-nav{
+				color: #474747;
+			}
+			.information-icon{
+				float: right;
+				display: inline-block;
+			}
+			.box{
+				height: 30px;
+				width: 30px;
+				position: absolute;
+				right: 6px;
+				top: 15px;
+			}
+			.mui-icon-arrowright,.mui-icon-checkmarkempty{
+				color: #DDC6FF;
+			}
+			.small{
+				height: 20px;
+				width: 80px;
+				position: absolute;
+				right: 44px;
+				top: 18px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="mineTitle">
+		    <p>个人资料</p>
+		    <span id="return" class="mui-icon mui-icon-back"></span>
+		</div>
+
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left img-head" src="../../img/headPic.jpg">
+					<div class="mui-media-body img-text-head">
+						修改头像
+						<p class="mui-ellipsis"></p>
+					</div>
+				</a>
+			</li>
+		</ul>
+
+		<ul class="mui-table-view information">
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<p class="mui-ellipsis"></p>
+					<div class="mui-media-body information-text-left">
+						昵称
+					</div>
+					<div class="mui-media-body information-text-center">
+						amumu
+					</div>
+					<div class="small">
+						<a class=" mui-icon mui-icon-checkmarkempty mui-pull-left"></a>
+						<p style="font-size: 12px;">实名认证</p>
+					</div>
+					<div class="box">
+						<a class=" mui-icon mui-icon-arrowright mui-pull-left"></a>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<div class="mui-media-body information-text-left">
+						ID
+					</div>
+					<div class="mui-media-body information-text-center">
+						1234567
+						<p class="mui-ellipsis"></p>
+					</div>
+					<div class="box information-icon">
+						<a class=" mui-icon mui-icon-arrowright mui-pull-left"></a>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<div class="mui-media-body information-text-left">
+						性别
+					</div>
+					<div class="mui-media-body information-text-center">
+						女
+						<p class="mui-ellipsis"></p>
+					</div>
+					<div class="box information-icon">
+						<a class=" mui-icon mui-icon-arrowright mui-pull-left"></a>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<div class="mui-media-body information-text-left">
+						生日
+					</div>
+					<div class="mui-media-body information-text-center">
+						2000-01-01
+						<p class="mui-ellipsis"></p>
+					</div>
+					<div class="box information-icon">
+						<a class=" mui-icon mui-icon-arrowright mui-pull-left"></a>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<div class="mui-media-body information-text-left">
+						所在地
+					</div>
+					<div class="mui-media-body information-text-center">
+						成都
+						<p class="mui-ellipsis"></p>
+					</div>
+					<div class="box information-icon">
+						<a class=" mui-icon mui-icon-arrowright mui-pull-left"></a>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		 mui.init({
+		    keyEventBind: {
+		        backbutton: true,
+		        menubutton: false
+		    }
+		});
+	</script>
+</html>
