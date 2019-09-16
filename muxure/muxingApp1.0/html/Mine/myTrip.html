@@ -5,8 +5,7 @@
     <title></title>
     <link rel="stylesheet" href="../../css/mui.min.css"/>
     <link rel="stylesheet" href="../../css/style.css"/>
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <style>
         * {
             margin: 0;
@@ -44,8 +43,7 @@
             color: white;
         }
 
-
-        .cardInfo {
+ .cardInfo {
             width: 100%;
         }
 
@@ -54,7 +52,7 @@
             display: flex;
             flex-direction: row;
             background: #FFFFFF;
-            height: 9.1rem;
+            height: 8.0em;
             border-radius: 0.625rem;
             box-shadow: 2px 2px 5px #999;
             overflow: hidden
@@ -62,7 +60,7 @@
 
         .trapPic {
             width: 116px;
-            height: 136px;
+            height: 125px;
             margin: 0.25rem;
             margin-right: 0.55rem;
 
@@ -74,12 +72,12 @@
             width: 100%;
             padding: 0;
             margin-top: 0.75rem;
-            font-size: 0.66rem;
+            font-size: 0.76rem;
             color: #999999;
         }
 
         .peopleNum {
-            margin-top: 0.15rem;
+            margin-top: 0.25rem;
         }
 
         .date {
@@ -94,12 +92,13 @@
             height: 1.25rem;
             margin-top: 0.25rem;
             font-size: 1rem;
+            /* border: 2px solid  #f00; */
         }
 
         .address .departure {
             display: inline-block;
             position: absolute;
-            width: 5.8rem;
+            width: 7rem;
             text-align: left;
             /* border: 2px solid #f00; */
         }
@@ -107,6 +106,7 @@
         .address .iconPosition {
             position: absolute;
             left: 45%;
+			top: 5px;
             display: inline-block;
         }
 
@@ -124,7 +124,7 @@
             overflow: hidden
             width: 100%;
             position: relative;
-            top: 1.3rem;
+            top: 0.5rem;
             font-size: 1.5rem;
             bottom: 0.25rem;
         }
@@ -137,9 +137,8 @@
 
         .Nickname,
         .date {
-            margin: 0;
-            padding: 0;
-            left: 0.85rem;
+            position: absolute;
+            left: 2.9rem;
         }
 
         .Nickname {
@@ -147,7 +146,8 @@
         }
 
         .date {
-            /* border: 2px solid red; */
+            position: absolute;
+            top: 9px;
         }
 
         .btn {
@@ -176,16 +176,24 @@
         }
 
         .icon_home:before {
-            font-size: 15px;
+            font-size: 25px;
+			color: #EEEEEE;
         }
+		.add-trap{
+			position: fixed;
+			font-size: 50px;
+			bottom: 30px;
+			right: 30px;
+		}
     </style>
 </head>
 <body>
 <!-- 导航栏 -->
-<div class="mineTitle">
-    <p>我的出行</p>
-    <span id="return" class="mui-icon mui-icon-back"></span>
-</div>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的出行</h1>
+		</header>
+		<div style="height: 60px;"></div>
 
 <div class="trapCard">
     <img class="trapPic" src="../../img/jay.jpg"/>
@@ -268,5 +276,16 @@
     $("#return").click(function () {
         mui.back();
     })
+	
+	$(".trapCard").click(function(event) {
+		mui.openWindow({
+			url: '../Home/detail.html', //String类型,要打开的界面的地址
+			show: {
+				aniShow: 'slide-in-right',
+				duration: 200
+			}
+		})
+	})
+	
 </script>
 </html>

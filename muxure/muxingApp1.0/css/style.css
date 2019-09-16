@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?fmkn1i');
-  src:  url('fonts/icomoon.eot?fmkn1i#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?fmkn1i') format('truetype'),
-    url('fonts/icomoon.woff?fmkn1i') format('woff'),
-    url('fonts/icomoon.svg?fmkn1i#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?y773qq');
+  src:  url('fonts/icomoon.eot?y773qq#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?y773qq') format('truetype'),
+    url('fonts/icomoon.woff?y773qq') format('woff'),
+    url('fonts/icomoon.svg?y773qq#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,73 +26,111 @@
 }
 
 .icon_home:before {
-  content: "\e90f";
+  content: "\e90d";
 }
 .icon_message:before {
-  content: "\e910";
+  content: "\e90e";
 }
 .icon_myself:before {
+  content: "\e90f";
+}
+.icon_55PX .path1:before {
+  content: "\e910";
+  margin-left: -24rem;
+  color: transparent;
+}
+.icon_55PX .path2:before {
   content: "\e911";
+  font-size: 5px;
+ /* margin-left: -25rem; */
+  /* color: rgb(0, 0, 0); */
 }
-.icon_90PX:before {
+.icon_publish .path1:before {
   content: "\e912";
+  color: rgb(153, 153, 255);
 }
-.icon_100PX:before {
+.icon_publish .path2:before {
   content: "\e913";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
 }
-.icon_uniE914:before {
+.icon_publish .path3:before {
+  content: "\e91d";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon_multi-up:before {
   content: "\e914";
-  color: #99f;
 }
-.icon_4:before {
+.icon_multi-left:before {
+  content: "\e915";
+}
+.icon_multi-down:before {
+	
+	font-size: 5px;
+	color: #bbb;
+  content: "\e916";
+}
+.icon_multi-right:before {
+  content: "\e917";
+}
+.icon_back-left:before {
+  content: "\e918";
+}
+.icon_back-up:before {
+  content: "\e919";
+}
+.icon_back-right:before {
+  content: "\e91a";
+}
+.icon_back-down:before {
+  content: "\e91b";
+}
+.icon_suggestions:before {
   content: "\e908";
 }
-.icon_5:before {
+.icon_trip:before {
   content: "\e909";
 }
-.icon_6 .path1:before {
+.icon_contact .path1:before {
   content: "\e900";
   color: rgb(153, 153, 255);
 }
-.icon_6 .path2:before {
+.icon_contact .path2:before {
   content: "\e901";
   margin-left: -1.1591796875em;
   color: rgb(204, 153, 255);
 }
-.icon_9:before {
+.icon_certification:before {
   content: "\e902";
   color: #c9f;
 }
-.icon_7:before {
+.icon_set-up:before {
   content: "\e903";
 }
-.icon_8:before {
+.icon_identity:before {
   content: "\e904";
 }
-.icon_10:before {
+.icon_phone:before {
   content: "\e905";
 }
-.icon_12:before {
+.icon_my-journey:before {
   content: "\e906";
 }
-.icon_13:before {
+.icon_code:before {
   content: "\e907";
 }
-.icon_1:before {
+.icon_number-of-people:before {
   content: "\e90a";
 }
-.icon_11:before {
+.icon_Location-big:before {
   content: "\e90b";
   color: #dddad7;
 }
-.icon_2:before {
+.icon_Location-less:before {
   content: "\e90c";
   color: #c9f;
 }
-.icon_3:before {
-  content: "\e90d";
-  color: #dddad7;
-}
-.icon_back:before {
-  content: "\e90e";
+.icon_search:before {
+  content: "\e91c";
 }

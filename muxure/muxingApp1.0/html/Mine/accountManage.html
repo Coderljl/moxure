@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../../css/mui.min.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+        }
+        .manageList li{
+            height: 3rem;
+            font-size: 1rem;
+            line-height: 3rem;
+            border-bottom: 1px solid #D8D8D8;
+            color: #666666;
+            text-indent: 2.125rem;
+			position: relative;
+        }
+        .mui-icon-forward:before {
+            position: absolute;
+            right: 2.125rem;
+            font-size: 1.7rem;
+			top: 0.5rem;
+            color: #D1D1FF;
+        }
+		.telNum{
+			position: absolute;
+			right: 4.25rem;
+			font-size: 1rem;
+			color: #999;
+		}
+    </style>
+</head>
+<body>
+<!-- 导航栏 -->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">账号管理</h1>
+			<!-- <a class="mui-pull-right"><i class="mui-icon mui-icon-person-filled"></i></a> -->
+		</header>
+		<div style="height: 70px"></div>
+
+<div class="list">
+    <ul class="manageList">
+        <a href="login.html">
+            <li class="myTrip"><span class="icon icon_travel"></span>切换账号<span class="mui-icon mui-icon-forward"></span>
+            </li>
+        </a>
+        <a href="javascript:;">
+            <li><span class="icon icon_travel">更换绑定账号</span><span class="telNum">153****9972</span><span class="mui-icon mui-icon-forward"></span></li>
+        </a>
+    </ul>
+
+
+    
+</div>
+</body>
+<script src="../../js/mui.min.js"></script>
+<script src="../../js/jquery-3.2.1.min.js"></script>
+<script>
+    mui('.list').on('tap', 'a', function () {
+        // 需要用户信息的先判断登录状态
+        var href = this.getAttribute('href');
+        // console.log(href);
+        //非plus环境，直接走href跳转
+        if (!mui.os.plus) {
+            location.href = href;
+            return;
+        }
+        var id = this.getAttribute("id");
+        //AoBaojs.setLocalStorage('mall_id', id);
+        //console.log(id);
+        if (!id) {
+            id = href;
+        }
+        if (href && ~href.indexOf('.html')) {
+            //打开窗口的相关参数
+            var options = {
+                styles: {
+                    popGesture: "hide",
+                },
+                show: {
+                    autoShow: true, //页面loaded事件发生后自动显示，默认为true
+                    aniShow: 'slide-in-right', //页面显示动画，默认为”slide-in-right“；
+                    duration: 250 //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+                },
+                waiting: {
+                    autoShow: false, //自动显示等待框，默认为true}
+                },
+                extras: {}
+            };
+            //打开新窗口 这种打开方式不好,需要改进
+            mui.openWindow(href, id, options);
+        }
+    });
+	$(".wordsInfo").click(function(){
+		mui.openWindow({
+		            url: 'login.html', //String类型,要打开的界面的地址
+		            show: {
+		                aniShow: 'slide-in-right',
+		                duration: 200
+		            }
+		        })
+	})
+</script>
+</html>

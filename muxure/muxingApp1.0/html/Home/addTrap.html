@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="../../css/style.css" />
 		<link href="../../css/mui.picker.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
 		<style>
 			p{
 				margin: 0;
@@ -44,12 +45,12 @@
 				margin: 0;
 			}
 			textarea::-webkit-input-placeholder {
-				color: #666;
+				color: #999;
 				font-size: 16px;
 			}
 			input::-webkit-input-placeholder {
-				color: #666;
-				font-size: 12px;
+				color: #999;
+				font-size: 15px;
 				text-align: left;
 			}
 			.item{
@@ -85,23 +86,30 @@
 			.timeItem{
 				margin:0 5px;
 			}
-			input.numInput{
-				width: 30px;
-				height: 20px;
-				margin: 0;
-				padding: 0;
+			.numInput{
+				margin-left: 0.625rem;
 				text-align: center;
 			}
 			input.themeInput{
-				width:50%;
-				height: 20px;
+				width:60%;
+				height: 30px;
 				margin: 0;
 				padding: 0;
 				text-align: center;
 			}
-			input.textInput{
+			.textInput{
+				height: auto;
 				width:90%;
+				line-height: 20px;
+				height: 80px;
 				border: none;
+				border-bottom: 1px solid #D8D8D8;
+			}
+			.icoPosition{
+				margin-left: 10px;
+			}
+			.btnStart,.btnEnd,.numInput{
+				color: #999;
 			}
 		</style>
 
@@ -143,34 +151,34 @@
 				-时间:
 				<span class="timeItem">
 					<span class="icon icon_5 timeIcon"></span>
-					<span id="resultStart" class="btnStart"   data-options='{"type":"date","beginYear":2014,"endYear":2020}'>请选择时间</span>
+					<span id="resultStart" class="btnStart" data-options='{"type":"date","beginYear":2014,"endYear":2020}'>请选择时间</span><i class="icon icon_multi-down icoPosition"></i>
 				</span>
 				<span>--</span>
 				<span class="timeItem">
 					<span class="icon icon_5 timeIcon"></span>
-					<span id="resultEnd"  class="btnEnd"  data-options='{"type":"date","beginYear":2014,"endYear":2020}'>请选择时间</span>
+					<span id="resultEnd" class="btnEnd" data-options='{"type":"date","beginYear":2014,"endYear":2020}'>请选择时间</span><i class="icon icon_multi-down icoPosition"></i>
 				</span>
-				
+
 			</div>
-			
-			<div class="trapNum">
+
+			<div id="showNumPicker" class="trapNum ">
 				-招募人数:
-				<input class="numInput" type="number" />
+				<span id="numResult" class="numInput">请选择人数</span><i class="icon icon_multi-down icoPosition"></i>
 			</div>
-			
+
 			<p class="titleTrap">行程描述</p>
 			<div class="trapTime">
 				-行程主题:
-			<input class="themeInput" type="number" placeholder="例：自驾游、自由行、骑行..."/>
-				
+				<input class="themeInput" type="text" placeholder="例：自驾游、自由行、骑行..." />
+
 			</div>
-			
+
 			<div class="trapNum ">
 				概述:
-				<input class="textInput" type="text"  placeholder="简要描述一下行程规划，吸引帅哥/美女加入哦～"/>
+				<textarea class="textInput" type="text" placeholder="简要描述一下行程规划，吸引帅哥/美女加入哦～" ></textarea>
 			</div>
 		</div>
-		<div class="line" >
+		<div class="line">
 			<p>* 可以上传一张展示图吸引别人加入哦～</p>
 		</div>
 	</body>
@@ -196,6 +204,35 @@
 				};
 				//-----------------------------------------
 				//					//级联示例
+				var userPicker = new $.PopPicker();
+				userPicker.setData([{
+					value: '1',
+					text: '1'
+				}, {
+					value: '2',
+					text: '2'
+				}, {
+					value: '3',
+					text: '3'
+				}, {
+					value: '4',
+					text: '4'
+				}, {
+					value: '5',
+					text: '5'
+				}, ]);
+				var showUserPickerButton = doc.getElementById('showNumPicker');
+				var userResult = doc.getElementById('numResult');
+				showUserPickerButton.addEventListener('tap', function(event) {
+					userPicker.show(function(items) {
+						userResult.innerText = items[0].text;
+						//返回 false 可以阻止选择框的关闭
+						//return false;
+					});
+				}, false);
+
+
+				/***************************************/
 				var cityPicker3 = new $.PopPicker({
 					layer: 3
 				});
@@ -224,16 +261,16 @@
 				}, false);
 
 			});
-			
+
 			//选择开始时间
 			var resultStart = $('#resultStart')[0];
 			var btnStart = $('.btnStart');
 			btnStart.each(function(i, btn) {
 				btn.addEventListener('tap', function() {
 					var _self = this;
-					if(_self.picker) {
-						_self.picker.show(function (rs) {
-							resultStart.innerText =rs.text;
+					if (_self.picker) {
+						_self.picker.show(function(rs) {
+							resultStart.innerText = rs.text;
 							_self.picker.dispose();
 							_self.picker = null;
 						});
@@ -272,19 +309,19 @@
 							_self.picker = null;
 						});
 					}
-					
+
 				}, false);
 			});
-			
+
 			//选择结束时间
 			var resultEnd = $('#resultEnd')[0];
 			var btnEnd = $('.btnEnd');
 			btnEnd.each(function(i, btn) {
 				btn.addEventListener('tap', function() {
 					var _self = this;
-					if(_self.picker) {
-						_self.picker.show(function (rs) {
-							resultEnd.innerText =rs.text;
+					if (_self.picker) {
+						_self.picker.show(function(rs) {
+							resultEnd.innerText = rs.text;
 							_self.picker.dispose();
 							_self.picker = null;
 						});
@@ -323,7 +360,7 @@
 							_self.picker = null;
 						});
 					}
-					
+
 				}, false);
 			});
 		})(mui, document, jQuery);

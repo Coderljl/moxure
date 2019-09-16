@@ -49,12 +49,40 @@
 				margin-top: -3.5rem;
 				color: #D1D1FF;
 			}
+			.list-time{
+				position: absolute;
+				top: 0;
+				right: 20px;
+				color: #999999;
+				font-size: 13px;
+			}
+			.mui-table-view-cell{
+				padding-top: 15px;
+				height: 70px;
+			}
+			.mui-ellipsis{
+				margin-top: 5px;
+			}
+			.message{
+				position: absolute;
+				width: 15px;
+				height: 15px;
+				text-align: center;
+				line-height: 12px;
+				top: 25px;
+				right: 20px;
+				background: red;
+				padding: 0.125rem;
+				color: white;
+				border-radius: 50%;
+				font-size: 10px;
+			}
 		</style>
 	</head>
 	<body>
 		<!-- 导航栏 -->
 		<header class="mui-bar mui-bar-nav">
-			<h1 class="mui-title">系统消息</h1>
+			<h1 class="mui-title">消息</h1>
 			<!-- <a class="mui-pull-right"><i class="mui-icon mui-icon-person-filled"></i></a> -->
 		</header>
 		<div style="height: 65px"></div>
@@ -63,8 +91,10 @@
 				<div class="mui-slider-handle">
 					<img class="mui-media-object mui-pull-left" src="../../img/notics.png">
 					<div class="mui-media-body">
-						<span class="notice">系统消息</span><div class="list-time">09:34</div>
+						<span class="notice">系统消息</span>
 						<p class="mui-ellipsis">请输入请输入</p>
+						<div class="list-time">09:34</div>
+						<div class="message">1</div>
 					</div>
 				</div>
 			</li>

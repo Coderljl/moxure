@@ -1,113 +1,87 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="../../css/mui.min.css"/>
-    <link rel="stylesheet" href="../../css/style.css"/>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="../../css/mui.min.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
 
-        ul li {
-            list-style: none;
-        }
+			.btn {
+				display: block;
+				margin: 0 auto;
+				margin-top: 1.125rem;
+				width: 100%;
+				height: 3rem;
+				font-size: 1rem;
+				border: none;
+				background: white;
+				color: #FF3300;
+				border-radius: 10px;
+			}
+			.segmentation{
+				height: 10px;
+				border-bottom: 1px solid #D8D8D8;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 导航栏 -->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">设置</h1>
+		</header>
+		<div style="height: 60px;"></div>
 
-        .mineTitle {
-            padding-top: 70px;
-            background: #9999FF;
-            height: 11rem;
-        }
+		<ul class="mui-table-view mui-table-view-chevron">
+			<li class="segmentation"></li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="accountManage.html">
+					账号管理
+				</a>
+			</li>
+			<li class="segmentation"></li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="personalData.html">
+					个人资料
+				</a>
+			</li>
+			<li class="segmentation"></li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="#">
+					帮助
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="about.html">
+					关于
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="#">
+					加入我们
+				</a>
+			</li>
+		</ul>
 
-        .mineTitle p {
-            font-size: 3rem;
-            height: 6rem;
-            line-height: 7rem;
-            text-align: center;
-            color: white;
-        }
-
-        .mui-icon-back:before {
-            position: absolute;
-            font-size: 6.5rem;
-            line-height: 7rem;
-            top: 4.5rem;
-            color: white;
-        }
-
-        .accountSetting, .infoSetting, .appInfosetting {
-            margin-top: 1.25rem;
-        }
-
-        .accountSetting li, .infoSetting li, .appInfosetting li {
-            height: 7rem;
-            font-size: 3rem;
-            line-height: 7rem;
-            border-bottom: 2px solid #D8D8D8;
-            color: #666666;
-            text-indent: 2.125rem;
-        }
-
-        .mui-icon-forward:before {
-            position: absolute;
-            right: 2.125rem;
-            font-size: 5rem;
-            margin-top: -3.5rem;
-            color: #D1D1FF;
-        }
-
-        .accountSetting li:first-child, .infoSetting li:first-child, .appInfosetting li:first-child {
-            border-top: 2px solid #D8D8D8;
-        }
-
-        .btn {
-            display: block;
-            margin: 0 auto;
-            margin-top: 3.125rem;
-            width: 100%;
-            height: 7rem;
-            font-size: 3rem;
-            border: none;
-            background: white;
-            color: #FF3300;
-            border-radius: 10px;
-        }
-    </style>
-</head>
-<body>
-<!-- 导航栏 -->
-<div class="mineTitle">
-    <p>设置</p>
-    <span id="return" class="mui-icon mui-icon-back"></span>
-</div>
-
-<ul class="accountSetting">
-    <li>账号管理<span class="mui-icon mui-icon-forward"></span></li>
-</ul>
-<ul class="infoSetting">
-	<a href="personalData.html"><li>个人资料<span class="mui-icon mui-icon-forward"></span></li></a>
-</ul>
-
-<ul class="appInfosetting">
-    <li>帮助<span class="mui-icon mui-icon-forward"></span></li>
-    <a href="about.html"><li>关于<span class="mui-icon mui-icon-forward"></span></li></a>
-    <li>加入我们<span class="mui-icon mui-icon-forward"></span></li>
-</ul>
-<button class="btn">退出登陆</button>
-</body>
-<script src="../../js/mui.min.js"></script>
-<script src="../../js/jquery-3.2.1.min.js"></script>
-<script>
-    mui.init({
-        keyEventBind: {
-            backbutton: true,
-            menubutton: false
-        }
-    });
-    $("#return").click(function () {
-        mui.back();
-    })
-</script>
+		<button class="btn">退出登陆</button>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/jquery-3.2.1.min.js"></script>
+	<script>
+		mui.init({
+			keyEventBind: {
+				backbutton: true,
+				menubutton: false
+			}
+		});
+		$("#return").click(function() {
+			mui.back();
+		})
+	</script>
 </html>

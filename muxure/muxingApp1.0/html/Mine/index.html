@@ -38,16 +38,17 @@
 
         .userInfo .wordsInfo,
         .userInfo .other {
-            margin-top: 1rem;
+            margin-top: 0.3rem;
         }
 
         .userInfo .wordsInfo {
-            margin-left: 1.875rem;
+            margin-left: 1.1rem;
         }
 
         .userInfo .wordsInfo .Nickname {
-            height: 1.5rem;
-            font-size: 1.5rem;
+			
+            height: 1.3rem;
+            font-size: 1.3rem;
             color: #000000;
         }
 
@@ -112,13 +113,13 @@
             line-height: 3rem;
             border-bottom: 1px solid #D8D8D8;
             color: #666666;
-            text-indent: 2.125rem;
+            text-indent: 1.05rem;
 			position: relative;
         }
 
         .likeList,
         .adviceList {
-            margin-top: 1.25rem;
+            margin-top: 0.5rem;
         }
 
         .likeList li,
@@ -128,7 +129,7 @@
 
         .mui-icon-forward:before {
             position: absolute;
-            right: 2.125rem;
+            right: 0.25rem;
             font-size: 1.7rem;
 			top: 0.5rem;
             color: #D1D1FF;
@@ -137,6 +138,15 @@
         .myTrip {
             /* border-top: 1px solid #D8D8D8; */
         }
+		.iconSeting{
+			position: absolute;
+			left: 0;
+			top: 15px;
+			font-size: 20px;
+		}
+		.item{
+			margin-left: 30px;
+		}
     </style>
 </head>
 <body>
@@ -151,7 +161,7 @@
     <img class="headInfo" src="../../img/headPic.jpg"/>
     <div class="wordsInfo">
         <p class="Nickname">
-           点击登陆
+           登陆/注册
         </p>
         <p class="signature">
            登陆后体验更多功能
@@ -165,22 +175,21 @@
 <div class="list">
     <ul class="outsideList">
         <a href="myTrip.html">
-            <li class="myTrip"><span class="icon icon_travel"></span>我的出行<span class="mui-icon mui-icon-forward"></span>
+            <li class="myTrip"><span class="iconSeting icon icon_my-journey"></span><span class="item">我的出行</span><span class="mui-icon mui-icon-forward"></span>
             </li>
         </a>
         <a href="identityProve.html">
-            <li><span class="icon icon_travel"></span>身份认证<span class="mui-icon mui-icon-forward"> </span></li>
+            <li><span class="iconSeting icon icon_identity"></span><span class="item">身份认证</span><span class="mui-icon mui-icon-forward"> </span></li>
         </a>
     </ul>
 
 
     <ul class="adviceList">
         <a href="advice.html">
-            <li class="advice"><span class="icon icon_travel"></span>反馈建议<span
-                    class="mui-icon mui-icon-forward"> </span></li>
+            <li class="advice"><span class="iconSeting icon icon_suggestions"></span><span class="item">反馈建议</span><span class="mui-icon mui-icon-forward"></span></li>
         </a>
         <a href="setting.html">
-            <li><span class="icon icon_travel"></span>设置<span class="mui-icon mui-icon-forward"></span></li>
+            <li><span class="iconSeting icon icon_set-up"></span><span class="item">设置</span><span class="mui-icon mui-icon-forward"></span></li>
         </a>
     </ul>
 </div>

@@ -1,0 +1,22 @@
+.name{
+	margin-top: 17px;
+	margin-left: 10px;
+	padding-bottom: 12px;
+	width: 200px;
+	border-bottom:1px solid #9999FF;
+	font-weight: 600;
+	font-size: 20px;
+}
+.comment{
+	margin: 10px;
+	height: 150px;
+	width: 95%;
+	color: #999999;
+	font-weight: 600;
+}
+.commitPic{
+	margin: 10px;
+	font-size: 15px;
+	color: #999999;
+	font-weight: 600;
+}
