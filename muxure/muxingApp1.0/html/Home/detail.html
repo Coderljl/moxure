@@ -20,23 +20,6 @@
 				background: #EEEEEE;
 			}
 
-			.mineTitle {
-				position: fixed;
-				top: 0;
-				z-index: 999;
-				width: 100%;
-				background: #9999FF;
-				padding-top: 2rem;
-				height: 4.5rem;
-				display: flex;
-				justify-content: space-between;
-			}
-
-			.mineTitle p {
-				margin-top: 0.5rem;
-				font-size: 1.1rem;
-				color: white;
-			}
 
 			.mui-icon-arrowleft:before {
 				/* position: absolute;
@@ -142,15 +125,17 @@
 
 			.startAddr,
 			.endAddr {
+				display: block;
+				width: 100px;
 				color: #000000;
 				font-size: 1.2rem;
-				/* border: 1px solid #f00; */
-				width: 8rem;
 				text-align: center;
-				margin: 5px 8px;
+				margin: 5px 4px;
 				font-weight: bold;
 			}
-
+			.startAddr{
+				margin-left: 1rem;
+			}
 			.lable {
 				background: #9966FF;
 				color: #FFFFFF;
@@ -187,7 +172,7 @@
 				/* border:0.125rem solid #000000  ; */
 			}
 
-			.path2 {
+			.icon_55PX .path2 {
 				font-size: 2px;
 			}
 
@@ -235,7 +220,9 @@
 			}
 
 			.iconPosition {
-				margin: 10px 0 10px 40px;
+				position: absolute;
+				top:15px;
+				left: 20px;
 			}
 
 			.titleTeam {
@@ -243,7 +230,7 @@
 				position: absolute;
 				top: 15px;
 				color: #898989;
-				margin-left: 5px;
+				margin-left: 45px;
 			}
 
 			.exit {
@@ -251,7 +238,7 @@
 				position: absolute;
 				top: 15px;
 				color: #989898;
-				margin-left: 28%;
+				margin-left: 45%;
 				padding-bottom: 5px;
 				border-bottom: 1px solid #B6B6B6;
 			}
@@ -261,7 +248,7 @@
 				height: 40px;
 				width: 120px;
 				border: none;
-				background: #CC99FF;
+				background: #9999FF;
 				position: absolute;
 				font-family: arial;
 				color: #FFFFFF;
@@ -278,11 +265,6 @@
 				/* border: 2px solid #FF0000; */
 			}
 			.icoPosition{
-				/* position: absolute;
-				left: 0;
-				border: 2px solid #f00;
-				text-align: center;
-				margin: 0 auto; */
 			}
 		</style>
 	</head>
@@ -354,16 +336,16 @@
 			</li>
 		</ul>
 		<div class="foot" style="display: none;">
-			<span class="mui-icon icon icon_home iconPosition"></span>
+			<span class=" icon icon_contact iconPosition"></span>
 			<span class="titleTeam">联系领队</span>
 			<button class="join">加入我们</button>
 
 		</div>
-		<div class="foot">
-			<span class="mui-icon icon icon_home iconPosition"></span>
+		<div class="foot" >
+			<span class="icon icon_contact iconPosition"><span class="path1"></span><span class="path2"></span></span>
 			<span class="titleTeam">进入群组</span>
 			<span class="exit">申请退出</span>
-			<button class="join">加入我们</button>
+			<button class="join">已加入</button>
 
 		</div>
 	</body>
@@ -380,16 +362,16 @@
 			mui.back();
 		})
 		$(".join").click(function(event) {
-			var btnArray = ['否', '是'];
-			mui.confirm('您即将加入这个队伍，确认？', '暮行', btnArray, function(e) {
+			var btnArray = ['确认', '取消'];
+			mui.confirm('您即将申请加入这个队伍，确认？', '募行', btnArray, function(e) {
 
 			})
 			event.stopPropagation();
 		})
 
 		$(".exit").click(function(event) {
-			var btnArray = ['否', '是'];
-			mui.confirm('您即将退出这个队伍，确认？', '暮行', btnArray, function(e) {
+			var btnArray = ['确认', '取消'];
+			mui.confirm('您即将申请退出这个队伍，确认？', '募行', btnArray, function(e) {
 
 			})
 			event.stopPropagation();

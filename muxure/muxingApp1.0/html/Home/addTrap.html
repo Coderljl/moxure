@@ -80,7 +80,7 @@
 			}
 			.trapTime,.trapNum{
 				margin-left: 30px;
-				padding-bottom: 10px;
+				padding-bottom: 3px;
 				color: #666;
 			}
 			.timeItem{
@@ -101,7 +101,7 @@
 				height: auto;
 				width:90%;
 				line-height: 20px;
-				height: 80px;
+				height: 120px;
 				border: none;
 				border-bottom: 1px solid #D8D8D8;
 			}
@@ -111,6 +111,19 @@
 			.btnStart,.btnEnd,.numInput{
 				color: #999;
 			}
+			.commit{
+				border-radius: 20px;
+				color: white;
+				border: 0;
+				background-color: #4E4EDD;
+				font-size: 13px;
+			}
+			.picList{
+				margin-left:11px ;
+			}
+			.m-left{
+				margin-left:11px ;
+			}
 		</style>
 
 	</head>
@@ -118,7 +131,7 @@
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">发起组队</h1>
-			<!-- <a class="mui-pull-right"><i class="mui-icon mui-icon-person-filled"></i></a> -->
+			<a class="commit  mui-btn mui-pull-right ">提交</a>
 		</header>
 
 		<div style="height: 65px"></div>
@@ -151,12 +164,14 @@
 				-时间:
 				<span class="timeItem">
 					<span class="icon icon_5 timeIcon"></span>
-					<span id="resultStart" class="btnStart" data-options='{"type":"date","beginYear":2014,"endYear":2020}'>请选择时间</span><i class="icon icon_multi-down icoPosition"></i>
+					<span id="resultStart" class="btnStart" data-options='{"type":"date","beginYear":2014,"endYear":2020}'>请选择时间</span><i
+					 class="icon icon_multi-down icoPosition"></i>
 				</span>
 				<span>--</span>
 				<span class="timeItem">
 					<span class="icon icon_5 timeIcon"></span>
-					<span id="resultEnd" class="btnEnd" data-options='{"type":"date","beginYear":2014,"endYear":2020}'>请选择时间</span><i class="icon icon_multi-down icoPosition"></i>
+					<span id="resultEnd" class="btnEnd" data-options='{"type":"date","beginYear":2014,"endYear":2020}'>请选择时间</span><i
+					 class="icon icon_multi-down icoPosition"></i>
 				</span>
 
 			</div>
@@ -175,11 +190,12 @@
 
 			<div class="trapNum ">
 				概述:
-				<textarea class="textInput" type="text" placeholder="简要描述一下行程规划，吸引帅哥/美女加入哦～" ></textarea>
+				<textarea class="textInput" type="text" placeholder="简要描述一下行程规划，吸引帅哥/美女加入哦～"></textarea>
 			</div>
 		</div>
 		<div class="line">
-			<p>* 可以上传一张展示图吸引别人加入哦～</p>
+			<p class="m-left">* 可以上传一张展示图吸引别人加入哦～</p>
+			<img class="picList" src="../../img/add.png" />
 		</div>
 	</body>
 	<script src="../../js/jquery-3.2.1.min.js"></script>
@@ -259,9 +275,8 @@
 						//return false;
 					});
 				}, false);
-
 			});
-
+			
 			//选择开始时间
 			var resultStart = $('#resultStart')[0];
 			var btnStart = $('.btnStart');

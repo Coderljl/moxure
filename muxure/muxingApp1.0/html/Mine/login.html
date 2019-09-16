@@ -63,13 +63,17 @@
 				margin: 0 auto;
 				margin-top: 20px;
 			}
-			.iconPosition{
+			.iconPosition,.iconPosition2{
 				position: absolute;
-				font-size: 2.25rem;
-				top: 0.25rem;
+				font-size: 1.8rem;
+				top: 0.5rem;
+				left: 0.4rem;
 				color: #666;
 			}
-			.telInput[type=number]{
+			.iconPosition2{
+				left: 0.6rem;
+			}
+			.verify[type=number],.telInput[type=number] {
 				height: 3rem;
 				border: none;
 				background: #F7F7FF; 
@@ -82,7 +86,7 @@
 				width: 80%;
 				margin: 0 auto;
 			}
-			.pwdArea .telInput{
+			.pwdArea .verify{
 				width: 60%;
 			}
 			.btn{
@@ -93,7 +97,7 @@
 				border: none;
 				font-size: 1.1rem;
 				text-align: center;
-				background: #CC99FF;
+				background: #D8D8D8;
 				border-radius:10px ;
 				color: #FFFFFF;
 			}
@@ -104,7 +108,7 @@
 				height: 3rem;
 				line-height: 3rem;
 				font-size:1.3rem;
-				background: #9999FF;
+				background: #D8D8D8;
 				border-radius: 10px;
 				color: #fff;
 				margin-top: 1rem;
@@ -112,6 +116,9 @@
 			.protocol{
 				margin-top: 1rem;
 				text-align: center;
+			}
+			 input::-webkit-input-placeholder {
+				color: #ccc; 
 			}
 		</style>
 	</head>
@@ -126,13 +133,13 @@
 		<p class="tip">手机号快捷注册/登陆</p>
 		<div class="line"></div>
 		<div class="telArea">
-			<i class="icon icon_message iconPosition"></i>
+			<i class="icon icon_phone iconPosition"></i>
 			<input class="telInput" type="number" placeholder="您的手机号" />
 		</div>
 		
 		<div class="pwdArea">
-			<i class="icon icon_message iconPosition"></i>
-			<input class="telInput" type="number" placeholder="您的手机号" />
+			<i class="icon icon_code iconPosition2"></i>
+			<input class="verify" type="number" placeholder="验证码" />
 			<div class="btn">获取验证码</div>
 		</div>
 		
@@ -149,6 +156,10 @@
 	            menubutton: false
 	        }
 	    });
+		//验证码正则
+		var myreg=/^[0-9]{4}$/;
+		//手机号正则
+		var telreg=/^[1][3,4,5,7,8][0-9]{9}$/;
 	    $("#return").click(function () {
 	        mui.back();
 	    })
@@ -156,5 +167,26 @@
 			var a = $(".telInput").val();
 			console.log(a)
 		})
+		
+		$(".telInput").on('input',function(){
+			if (!telreg.test(this.value)) {
+				$(".btn").css("background","#D8D8D8");
+			    return false;
+			} else {
+				$(".btn").css("background","#CC99FF");
+				$(".verify").on('input',function(){
+					if (!myreg.test(this.value)) {
+						$(".login").css("background","#D8D8D8");
+					    return false;
+					} else {
+						$(".login").css("background","#9999FF");
+					    return true;
+					}
+				})
+			    return true;
+			}
+		})
+		
+		
 	</script>
 </html>

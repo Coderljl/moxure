@@ -8,12 +8,11 @@
 		<link rel="stylesheet" href="../../css/style.css" />
 		<link rel="stylesheet" href="../../css/reset.css" />
 		<style>
-			.nowAddress {
+		.nowAddress {
             position: absolute;
             top: 1.8rem;
             color: white;
             left: 0.625rem;
-            /* font-size: 1rem; */
         }
 
         .div-bor {
@@ -32,6 +31,7 @@
             background-position: 0px 0px; /*图片显示的位置*/
             width: 15px; /*设置图片显示的宽*/
             height: 0.5rem; /*图片显示的高*/
+			color: #666666;s
         }
 
         input[type=text] {
@@ -39,7 +39,12 @@
             height: 1.8rem;
             text-indent: 1.5rem;
         }
-
+		input::-webkit-input-placeholder {
+            font-size: 0.8rem;
+            text-indent: 1rem;
+			color: #ccc; 
+        }
+		
         .cardInfo {
             width: 100%;
         }
@@ -89,12 +94,13 @@
             height: 1.25rem;
             margin-top: 0.25rem;
             font-size: 1rem;
-            /* border: 2px solid  #f00; */
         }
 
         .address .departure {
             display: inline-block;
             position: absolute;
+			left: -5px;
+			top: 5px;
             width: 7rem;
             text-align: left;
             /* border: 2px solid #f00; */
@@ -109,6 +115,7 @@
 
         .address .goal {
             position: absolute;
+			top: 5px;
             right: 1rem;
             display: inline-block;
             width: 5rem;
@@ -191,13 +198,27 @@
 			color: white;
 			font-weight: 700;
 		}
+		.mui-bar-nav .icon_Location-less:before {
+			text-align: left;
+			content: "\e90c";
+			color: #EEEEEE;
+			font-size: 20px;
+		}
+		.icon_Location-less:before {
+			margin:0 5px;
+		  content: "\e90c";
+		  }
+		.smallIcon{
+			font-size: 10px;
+			margin-right: 3px;
+		}
     </style>
 	</head>
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class=" mui-icon icon icon_Location-less mui-pull-left"><span class="city">成都</span></a>
+			<a class=" mui-icon icon icon_Location-less mui-pull-left "><span class="city">成都</span></a>
 			<div class="div-bor">
-				<i class="icon  icon_message icon-user"></i>
+				<i class="icon  icon_search icon-user"></i>
 				<input type="text" class="user" placeholder=" 寻找队伍" disabled="disabled" />
 			</div>
 		</header>
@@ -206,12 +227,12 @@
 			<img class="trapPic" src="../../img/jay.jpg" />
 			<div class="cardInfo">
 				<div class="address">
-					<span class="departure icon icon_home">成都1515</span>
+					<span class="departure icon icon_Location-less">成都</span>
 					<span class="iconPosition">→</span>
-					<span class="goal icon icon_home">拉萨</span>
+					<span class="goal icon icon_Location-less">拉萨</span>
 				</div>
-				<div class="journey">行程：<span>2019年9月7日</span>&nbsp;-&nbsp;<span>2019年9月8日</span></div>
-				<div class="peopleNum">出行人数：<span>3</span>/<span>5</span></div>
+				<div class="journey"><i class="smallIcon icon icon_trip"></i>行程：<span>9月7日</span>&nbsp;-&nbsp;<span>9月8日</span></div>
+				<div class="peopleNum"><i class="smallIcon icon icon_number-of-people"></i>出行人数：<span>3</span>/<span>5</span></div>
 				<div class="userInfo">
 					<img class="headInfo" src="../../img/jay.jpg" />
 					<div>
@@ -225,98 +246,6 @@
 			</div>
 		</div>
 
-
-		<div class="trapCard">
-			<img class="trapPic" src="../../img/jay.jpg" />
-			<div class="cardInfo">
-				<div class="address">
-					<span class="departure icon icon_home">成都1515</span>
-					<span class="iconPosition">→</span>
-					<span class="goal icon icon_home">拉萨</span>
-				</div>
-				<div class="journey">行程：<span>2019年9月7日</span>&nbsp;-&nbsp;<span>2019年9月8日</span></div>
-				<div class="peopleNum">出行人数：<span>3</span>/<span>5</span></div>
-				<div class="userInfo">
-					<img class="headInfo" src="../../img/jay.jpg" />
-					<div>
-						<p class="Nickname">周杰伦</p>
-						<p class="date">2019-07-01</p>
-					</div>
-					<button class="jionBtn btn" style="display: none;">JOIN IN</button>
-					<button class="jionedBtn btn">已加入</button>
-					<button class="endBtn btn" style="display: none;">一结束</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="trapCard">
-			<img class="trapPic" src="../../img/jay.jpg" />
-			<div class="cardInfo">
-				<div class="address">
-					<span class="departure icon icon_home">成都1515</span>
-					<span class="iconPosition">→</span>
-					<span class="goal icon icon_home">拉萨</span>
-				</div>
-				<div class="journey">行程：<span>2019年9月7日</span>&nbsp;-&nbsp;<span>2019年9月8日</span></div>
-				<div class="peopleNum">出行人数：<span>3</span>/<span>5</span></div>
-				<div class="userInfo">
-					<img class="headInfo" src="../../img/jay.jpg" />
-					<div>
-						<p class="Nickname">周杰伦</p>
-						<p class="date">2019-07-01</p>
-					</div>
-					<button class="jionBtn btn" style="display: none;">JOIN IN</button>
-					<button class="jionedBtn btn">已加入</button>
-					<button class="endBtn btn" style="display: none;">一结束</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="trapCard">
-			<img class="trapPic" src="../../img/jay.jpg" />
-			<div class="cardInfo">
-				<div class="address">
-					<span class="departure">成都</span>
-					<span class="iconPosition">→</span>
-					<span class="goal">拉萨</span>
-				</div>
-				<div class="journey">行程：<span>2019年9月7日</span>-<span>2019年9月8日</span></div>
-				<div class="peopleNum">出行人数：<span>3</span>/<span>5</span></div>
-				<div class="userInfo">
-					<img class="headInfo" src="../../img/jay.jpg" />
-					<div>
-						<p class="Nickname">周杰伦</p>
-						<p class="date">2019-07-01</p>
-					</div>
-					<button class="jionBtn btn" style="display: none;">JOIN IN</button>
-					<button class="jionedBtn btn" style="display: none;">已加入</button>
-					<button class="endBtn btn">已结束</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="trapCard">
-			<img class="trapPic" src="../../img/jay.jpg" />
-			<div class="cardInfo">
-				<div class="address">
-					<span class="departure">成都</span>
-					<span class="iconPosition">→</span>
-					<span class="goal">拉萨</span>
-				</div>
-				<div class="journey">行程：<span>2019年9月7日</span>-<span>2019年9月8日</span></div>
-				<div class="peopleNum">出行人数：<span>3</span>/<span>5</span></div>
-				<div class="userInfo">
-					<img class="headInfo" src="../../img/jay.jpg" />
-					<div>
-						<p class="Nickname">周杰伦</p>
-						<p class="date">2019-07-01</p>
-					</div>
-					<button class="jionBtn btn">JOIN IN</button>
-					<button class="jionedBtn btn" style="display: none;">已加入</button>
-					<button class="endBtn btn" style="display: none;">一结束</button>
-				</div>
-			</div>
-		</div>
 
 		<span class="add-trap icon icon_publish">
 			<span class="path1"></span><span class="path2"></span><span class="path3"></span>
@@ -367,8 +296,8 @@
 			})
 		})
 		$(".jionBtn").click(function(event) {
-			var btnArray = ['否', '是'];
-			mui.confirm('您即将加入这个队伍，确认？', '暮行', btnArray, function(e) {})
+			var btnArray = ['确认', '取消'];
+			mui.confirm('您即将申请加入这个队伍，确认？', '募行', btnArray, function(e) {})
 			event.stopPropagation();
 		})
 	</script>
